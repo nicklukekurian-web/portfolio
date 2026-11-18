@@ -1,0 +1,527 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <title>Projects and Proof | Nicholas Kurian</title>
+  <meta name="description" content="Projects and proof from Nicholas Kurian: Internlog's explainable fraud detector, a FlyRank ML analysis, NCL and CSAW results, certifications and skills.">
+  <link rel="canonical" href="https://nickkurian.dev/proof">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Nicholas Kurian">
+  <meta property="og:title" content="Projects and Proof | Nicholas Kurian">
+  <meta property="og:description" content="CS @ UT Dallas · ML + AI security · building explainable fraud detection.">
+  <meta property="og:url" content="https://nickkurian.dev/proof">
+  <meta property="og:image" content="https://nickkurian.dev/assets/img/og.jpg">
+  <meta property="og:image:alt" content="Nicholas Kurian, CS at UT Dallas: ML and AI security">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Projects and Proof | Nicholas Kurian">
+  <meta name="twitter:description" content="CS @ UT Dallas · ML + AI security · building explainable fraud detection.">
+  <meta name="twitter:image" content="https://nickkurian.dev/assets/img/og.jpg">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preload" href="/assets/fonts/doto-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/jetbrains-mono-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/crt.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/proof.css">
+  <script type="module" src="/js/main.js"></script>
+</head>
+<body data-page="proof">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- chrome:start (shared header + menu; identical on every page, see tests/layout-sync.test.js) -->
+  <header class="site-header">
+    <a class="brand" href="/">Nicholas Kurian</a>
+    <nav class="site-nav" aria-label="Primary">
+      <a class="label nav-cta" href="https://github.com/nicklukekurian-web/Internlog" rel="noopener noreferrer">Internlog <span aria-hidden="true">↗</span><span class="sr-only"> on GitHub</span></a>
+      <a class="label hide-sm nav-talk" href="/contact" aria-describedby="talk-status"><span class="nav-talk-text">Let's talk</span><span class="online-dot" aria-hidden="true"></span><span class="nav-tip" id="talk-status" aria-hidden="true">Open to Summer 2027</span></a>
+      <button class="label menu-toggle" type="button" aria-expanded="false" aria-controls="menu-panel">
+        <span class="when-closed">Menu <span aria-hidden="true">≡</span></span><span class="when-open">Close</span>
+      </button>
+    </nav>
+  </header>
+  <div class="menu-backdrop"></div>
+  <div class="menu-panel" id="menu-panel" hidden>
+    <nav aria-label="Site menu">
+      <ul class="menu-rows">
+        <li><a href="/"><span>Home</span> <span>01</span></a></li>
+        <li><a href="/proof" aria-current="page"><span>Proof</span> <span>02</span></a></li>
+        <li><a href="/contact"><span>Contact</span> <span>03</span></a></li>
+        <li><a href="/assets/Nicholas_Kurian_Resume.pdf" download><span>Resume <span aria-hidden="true">↓</span></span> <span>04</span></a></li>
+      </ul>
+      <ul class="menu-socials" aria-label="Contact links">
+        <li><a class="icon-link" href="mailto:nick.luke.kurian@gmail.com" aria-label="Email Nicholas" title="Email Nicholas" data-tip="Email"><svg class="pix" viewBox="0 0 16 16" aria-hidden="true" focusable="false" shape-rendering="crispEdges"><use href="/assets/icons/sprite.svg#email"/></svg></a></li>
+        <li><a class="icon-link" href="https://github.com/nicklukekurian-web" rel="noopener noreferrer" aria-label="GitHub profile" title="GitHub profile" data-tip="GitHub"><svg class="pix" viewBox="0 0 16 16" aria-hidden="true" focusable="false" shape-rendering="crispEdges"><use href="/assets/icons/sprite.svg#github"/></svg></a></li>
+        <li><a class="icon-link" href="https://www.linkedin.com/in/nick-kurian/" rel="noopener noreferrer" aria-label="LinkedIn profile" title="LinkedIn profile" data-tip="LinkedIn"><svg class="pix" viewBox="0 0 16 16" aria-hidden="true" focusable="false" shape-rendering="crispEdges"><use href="/assets/icons/sprite.svg#linkedin"/></svg></a></li>
+      </ul>
+    </nav>
+    <div class="menu-theme label">
+      <span id="theme-label">Theme</span>
+      <span class="theme-switch" role="group" aria-labelledby="theme-label">
+        <button type="button" data-theme-set="dark" aria-pressed="true">Dark</button>
+        <button type="button" data-theme-set="light" aria-pressed="false">Light</button>
+      </span>
+    </div>
+  </div>
+  <!-- chrome:end -->
+
+  <main id="main" class="proof">
+    <header class="proof-head wrap">
+      <div class="status-bar">
+        <dl>
+          <div class="item"><dt>Currently</dt><dd>CS sophomore @ UT Dallas</dd></div>
+          <div class="item"><dt>Based in</dt><dd>Allen, TX</dd></div>
+          <div class="item"><dt>Open to</dt><dd>Summer 2027 internships</dd></div>
+          <div class="item"><dt>Updated</dt><dd>Nov 2026</dd></div>
+        </dl>
+      </div>
+      <h1 class="proof-title display glow">Projects and proof</h1>
+    </header>
+
+    <div class="proof-layout wrap">
+      <nav class="rail" aria-label="On this page">
+        <span class="label dim rail-title">On this page</span>
+        <ol class="rail-list num-list">
+          <li><a href="#internlog"><span class="caret" aria-hidden="true">▸</span><span><span class="br">[</span>01<span class="br">]</span> Internlog</span></a></li>
+          <li><a href="#flyrank"><span class="caret" aria-hidden="true">▸</span><span><span class="br">[</span>02<span class="br">]</span> FlyRank</span></a></li>
+          <li><a href="#checkpoint"><span class="caret" aria-hidden="true">▸</span><span><span class="br">[</span>03<span class="br">]</span> Checkpoint</span></a></li>
+          <li><a href="#mindsoft"><span class="caret" aria-hidden="true">▸</span><span><span class="br">[</span>04<span class="br">]</span> MindSoft</span></a></li>
+          <li><a href="#competitions"><span class="caret" aria-hidden="true">▸</span><span><span class="br">[</span>05<span class="br">]</span> Competitions</span></a></li>
+          <li><a href="#certifications"><span class="caret" aria-hidden="true">▸</span><span><span class="br">[</span>06<span class="br">]</span> Certifications</span></a></li>
+          <li><a href="#skills"><span class="caret" aria-hidden="true">▸</span><span><span class="br">[</span>07<span class="br">]</span> Skills</span></a></li>
+        </ol>
+        <div class="rail-progress" aria-hidden="true"><i></i></div>
+      </nav>
+
+      <div class="proof-body">
+        <!-- ─────────────────────────── 01 INTERNLOG -->
+        <section class="case" id="internlog" aria-labelledby="internlog-title">
+          <span class="eyebrow label"><b class="glow">01</b> / Internlog: case study</span>
+          <h2 class="h2 glow" id="internlog-title">Internlog</h2>
+          <p class="lede">An anonymous internship-review platform with an explainable fraud and spam detector.</p>
+
+
+
+          <p class="meta-row label">Node/Express <span aria-hidden="true">·</span> Supabase <span aria-hidden="true">·</span> Render</p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="https://github.com/nicklukekurian-web/Internlog" rel="noopener noreferrer">Internlog on GitHub <span aria-hidden="true">↗</span></a>
+            <a class="btn btn-secondary" href="https://internlog-onrender-com.onrender.com/" rel="noopener noreferrer">Live site <span aria-hidden="true">↗</span></a>
+          </div>
+          <p class="note label dim">Free hosting: the first load can take a few seconds to wake up.</p>
+          <p class="credit">Built with Suhaas Voruganti.</p>
+
+          <h3 class="h3 glow">What it is</h3>
+          <p>Students browse and submit internship reviews, company ratings and interview experiences. Submissions are screened by a rule-based detector that scores five signals: lexical diversity, near-duplicate similarity, rating extremity, templated language and link spam. It shows moderators why a review was flagged instead of rejecting it automatically.</p>
+
+          <h3 class="h3 glow">What I built</h3>
+          <ul class="ticks">
+            <li>Moved storage from flat JSON files to Supabase Postgres with four tables and row-level security enabled.</li>
+            <li>Wrote the data-access layer so the frontend needed no changes after the migration.</li>
+            <li>Added moderation workflows, email notifications through the Brevo API, and rate limiting.</li>
+            <li>Did a full mobile pass: hamburger nav, responsive CSS, small-phone breakpoint at 380px.</li>
+            <li>Set up GitHub Actions CI/CD and CodeQL security scanning, plus uptime monitoring.</li>
+            <li>Ran a security hardening pass: admin-gated write endpoints, an XSS fix, a query fix that protects the database connection pool, 36 automated tests that run on every push, and every npm audit finding cleared (Nov 2026).</li>
+          </ul>
+
+          <figure class="exhibit ex-e1-home" data-exhibit="e1-home">
+            <div class="ex-head"><span class="ex-tag label">Demo data</span></div>
+            <div class="ex-stage" role="group" aria-label="Interactive replica of the Internlog home page" aria-describedby="e1-home-desc"></div>
+            <p class="ex-desc" id="e1-home-desc">A replica of the Internlog landing page with fictional demo companies: the tier pills and the search box really filter the cards, and the recent-reviews strip pauses on hover.</p>
+            <details class="ex-data"><summary class="label">View data</summary><div class="table-wrap"><table class="table"><caption>Demo companies</caption><thead><tr><th scope="col">Company</th><th scope="col">Tier</th><th scope="col">Industry</th></tr></thead><tbody><tr><td>Meridian Cloud Systems</td><td>Tier 3 · Gold</td><td>Technology</td></tr><tr><td>Cobalt Aerospace</td><td>Tier 3 · Gold</td><td>Aerospace</td></tr><tr><td>Lone Star Analytics</td><td>Tier 2 · Silver</td><td>Data</td></tr><tr><td>Brightline Robotics</td><td>Tier 2 · Silver</td><td>Robotics</td></tr><tr><td>Oakridge Community Bank</td><td>Tier 1 · Bronze</td><td>Finance</td></tr><tr><td>Pinecrest Digital</td><td>Tier 1 · Bronze</td><td>Marketing</td></tr></tbody></table></div></details>
+            <noscript><img src="/assets/img/exhibits/internlog-home.webp" width="1200" height="800" alt="Screenshot of the Internlog home page" loading="lazy" decoding="async"></noscript>
+            <figcaption class="ex-cap label">Fig. 01 · Internlog home</figcaption>
+          </figure>
+          <div class="ex-pair">
+          <figure class="exhibit ex-e2-company" data-exhibit="e2-company">
+            <div class="ex-head"><span class="ex-tag label">Demo data</span></div>
+            <div class="ex-stage" role="group" aria-label="Interactive replica of an Internlog company page" aria-describedby="e2-company-desc"></div>
+            <p class="ex-desc" id="e2-company-desc">A fictional company page: the stats are computed from its four reviews (average 8.5/10), and sort and the role filter really reorder the cards.</p>
+            <details class="ex-data"><summary class="label">View data</summary><div class="table-wrap"><table class="table"><caption>Meridian Cloud Systems (demo): average rating 8.5, difficulty 8.5</caption><thead><tr><th scope="col">Role</th><th scope="col">Rating</th><th scope="col">Difficulty</th><th scope="col">Pay</th><th scope="col">Posted</th></tr></thead><tbody><tr><td>Software Engineering Intern</td><td>9/10</td><td>8/10</td><td>$48/hr</td><td>2026-09-02</td></tr><tr><td>Software Engineering Intern</td><td>9/10</td><td>8/10</td><td>$48/hr</td><td>2026-08-30</td></tr><tr><td>Cloud Infrastructure Intern</td><td>8/10</td><td>9/10</td><td>$46/hr</td><td>2026-08-24</td></tr><tr><td>Data Platform Intern</td><td>8/10</td><td>9/10</td><td>$44/hr</td><td>2026-08-15</td></tr></tbody></table></div></details>
+            <noscript><img src="/assets/img/exhibits/internlog-review.webp" width="1100" height="840" alt="Screenshot of an Internlog company page with reviews" loading="lazy" decoding="async"></noscript>
+            <figcaption class="ex-cap label">Fig. 02 · A company page with reviews</figcaption>
+          </figure>
+          <figure class="exhibit ex-e3-mobile" data-exhibit="e3-mobile">
+            <div class="ex-head"><span class="ex-tag label">Demo data</span></div>
+            <div class="ex-stage" role="group" aria-label="Interactive phone view of Internlog" aria-describedby="e3-mobile-desc"></div>
+            <p class="ex-desc" id="e3-mobile-desc">The mobile landing page in a phone frame: open the menu, and drag the width handle between 320, 380 and 430 pixels to see the small-phone layout take over at 380.</p>
+            <details class="ex-data"><summary class="label">View data</summary><div class="table-wrap"><table class="table"><thead><tr><th scope="col">Viewport width</th><th scope="col">Layout</th></tr></thead><tbody><tr><td>320px</td><td>Small-phone layout</td></tr><tr><td>380px</td><td>Small-phone breakpoint</td></tr><tr><td>430px</td><td>Standard phone layout</td></tr></tbody></table></div></details>
+            <noscript><img src="/assets/img/exhibits/internlog-mobile.webp" width="520" height="873" alt="Screenshot of Internlog on a phone" loading="lazy" decoding="async"></noscript>
+            <figcaption class="ex-cap label">Fig. 03 · Internlog on a phone</figcaption>
+          </figure>
+          </div>
+
+          <h3 class="h3 glow">Architecture</h3>
+          <p>Node/Express 5 REST API; vanilla HTML/CSS/JS frontend with no framework; Postgres on Supabase via a pg connection pool over the IPv4-compatible session pooler (migrated from the original JSON-file storage); Render hosting with deploys on pushes to main and UptimeRobot pings to avoid free-tier spin-down; Brevo HTTPS email API instead of Gmail SMTP because Render's free tier blocks outbound SMTP ports; configuration through environment variables.</p>
+          <figure class="blueprint">
+            <svg viewBox="0 0 960 300" role="img" aria-label="Internlog architecture" aria-describedby="arch-d">
+              <desc id="arch-d">The browser runs a vanilla HTML, CSS and JavaScript frontend that calls an Express 5 REST API on Render. The API reaches Supabase Postgres through a pg pool on the IPv4 session pooler, and sends email through the Brevo HTTPS API. UptimeRobot pings the API, and GitHub Actions with CodeQL deploys on pushes to main.</desc>
+              <defs><marker id="arr" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L8 4L0 8z" class="bp-head"/></marker></defs>
+              <rect class="bp-box" x="20" y="40" width="190" height="56"/><text x="115" y="64" text-anchor="middle">BROWSER</text><text class="bp-sub" x="115" y="82" text-anchor="middle">vanilla HTML/CSS/JS</text>
+              <rect class="bp-box is-signal" x="250" y="40" width="210" height="56"/><text x="355" y="64" text-anchor="middle">EXPRESS 5 REST API</text><text class="bp-sub" x="355" y="82" text-anchor="middle">Render · env config</text>
+              <rect class="bp-box" x="500" y="40" width="170" height="56"/><text x="585" y="64" text-anchor="middle">PG POOL</text><text class="bp-sub" x="585" y="82" text-anchor="middle">session pooler (IPv4)</text>
+              <rect class="bp-box" x="710" y="40" width="220" height="56"/><text x="820" y="64" text-anchor="middle">SUPABASE POSTGRES</text><text class="bp-sub" x="820" y="82" text-anchor="middle">4 tables · RLS on</text>
+              <path class="bp-line" d="M210 68H246" marker-end="url(#arr)"/><path class="bp-line" d="M460 68H496" marker-end="url(#arr)"/><path class="bp-line" d="M670 68H706" marker-end="url(#arr)"/>
+              <rect class="bp-box" x="250" y="190" width="210" height="56"/><text x="355" y="214" text-anchor="middle">BREVO EMAIL API</text><text class="bp-sub" x="355" y="232" text-anchor="middle">HTTPS (SMTP blocked)</text>
+              <path class="bp-line" d="M355 96V186" marker-end="url(#arr)"/>
+              <rect class="bp-box" x="20" y="190" width="190" height="56"/><text x="115" y="214" text-anchor="middle">UPTIMEROBOT</text><text class="bp-sub" x="115" y="232" text-anchor="middle">pings: no spin-down</text>
+              <path class="bp-line" d="M210 206L280 100" marker-end="url(#arr)"/>
+              <rect class="bp-box" x="500" y="190" width="170" height="56"/><text x="585" y="214" text-anchor="middle">GITHUB ACTIONS</text><text class="bp-sub" x="585" y="232" text-anchor="middle">CI · CodeQL</text>
+              <path class="bp-line bp-dash" d="M520 190L430 100" marker-end="url(#arr)"/>
+              <g class="bp-dim"><text x="476" y="150">deploy on push to main</text></g>
+              <g class="bp-dim"><line x1="710" y1="120" x2="930" y2="120"/><line x1="710" y1="114" x2="710" y2="126"/><line x1="930" y1="114" x2="930" y2="126"/><text x="820" y="140" text-anchor="middle">direct connection is IPv6-only</text></g>
+            </svg>
+            <figcaption class="label">Fig. 04 · Internlog architecture</figcaption>
+          </figure>
+
+          <h3 class="h3 glow">Backend practices</h3>
+          <p>Parameterized SQL; mapper functions from snake_case rows to a camelCase API; a shared asyncRoute wrapper for consistent error handling; idempotent INSERT … ON CONFLICT SQL for data fixes and restores; the company list built from one aggregated query instead of one query per company; clean URLs with a 301 from /page.html to /page.</p>
+
+          <h3 class="h3 glow" id="detector-title">Explainable fraud detector</h3>
+          <p>A transparent, rule-based Stage 1 scorer (not a trained model) with no dependencies. It checks five signals: length and vocabulary diversity, near-duplicate similarity (Jaccard similarity on word 3-gram shingles against the company's existing reviews), rating extremity (a 1 or 10 paired with thin text), generic or templated phrasing, and links (with extra weight for commonly abused domains). It produces a 0–100 score, a level (low, medium or high) and plain-English reasons, stores all three with the review, and adds them to the moderation email. It never auto-rejects, so a human makes the final call. I chose a rule-based scorer over a separate ML microservice on purpose: every flag has to be explainable, and there's no labeled data yet to train on.</p>
+          <div class="detector-figs">
+            <figure class="blueprint bp-pipe">
+              <svg class="pipe-wide" viewBox="0 0 640 424" role="img" aria-label="Detector pipeline" aria-describedby="pipe-d">
+                <desc id="pipe-d">A submission passes validation and rate limiting, then the five-signal scorer, which checks length and vocabulary, near-duplicates, rating extremity, templated phrasing, and links and abused domains. The score, level and reasons are stored with the review and added to a moderation email with a ticket ID and a delete command. A human makes the decision; the system never auto-rejects. Scores under 30 are low, 30 to 59 medium, 60 and up high.</desc>
+                <defs><marker id="arr2" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L8 4L0 8z" class="bp-head"/></marker></defs>
+                <rect class="bp-box" x="0" y="16" width="150" height="48"/><text x="75" y="45" text-anchor="middle">SUBMISSION</text>
+                <rect class="bp-box" x="180" y="16" width="240" height="48"/><text x="300" y="45" text-anchor="middle">VALIDATION + RATE LIMIT</text>
+                <rect class="bp-box is-signal" x="450" y="16" width="190" height="48"/><text x="545" y="45" text-anchor="middle">FIVE-SIGNAL SCORER</text>
+                <path class="bp-line" d="M150 40H176" marker-end="url(#arr2)"/><path class="bp-line" d="M420 40H446" marker-end="url(#arr2)"/>
+                <path class="bp-line" d="M545 64V220" marker-end="url(#arr2)"/>
+                <g class="bp-dim">
+                  <text x="0" y="104">1 LENGTH + VOCABULARY</text>
+                  <text x="0" y="128">2 NEAR-DUPLICATE (JACCARD)</text>
+                  <text x="0" y="152">3 RATING EXTREMITY</text>
+                  <text x="0" y="176">4 TEMPLATED PHRASING</text>
+                  <text x="0" y="200">5 LINKS + ABUSED DOMAINS</text>
+                  <line x1="226" y1="90" x2="226" y2="206"/><line x1="220" y1="90" x2="232" y2="90"/><line x1="220" y1="206" x2="232" y2="206"/>
+                  <path class="bp-lead bp-dash" d="M226 148H541"/>
+                </g>
+                <rect class="bp-box" x="450" y="224" width="190" height="56"/><text x="545" y="249" text-anchor="middle">SCORE, LEVEL +</text><text x="545" y="267" text-anchor="middle">REASONS STORED</text>
+                <rect class="bp-box" x="180" y="224" width="240" height="56"/><text x="300" y="249" text-anchor="middle">MODERATION EMAIL</text><text class="bp-sub" x="300" y="267" text-anchor="middle">(TICKET ID + DELETE COMMAND)</text>
+                <rect class="bp-box is-signal" x="0" y="224" width="150" height="56"/><text x="75" y="257" text-anchor="middle">HUMAN DECISION</text>
+                <path class="bp-line" d="M450 252H424" marker-end="url(#arr2)"/><path class="bp-line" d="M180 252H154" marker-end="url(#arr2)"/>
+                <text class="bp-note" x="0" y="304">NEVER AUTO-REJECTS</text>
+                <g class="bp-dim">
+                  <line x1="0" y1="360" x2="640" y2="360"/>
+                  <line x1="0" y1="352" x2="0" y2="368"/><line x1="192" y1="352" x2="192" y2="368"/><line x1="384" y1="352" x2="384" y2="368"/><line x1="640" y1="352" x2="640" y2="368"/>
+                  <text x="0" y="342">0</text><text x="192" y="342" text-anchor="middle">30</text><text x="384" y="342" text-anchor="middle">60</text><text x="640" y="342" text-anchor="end">100</text>
+                  <text x="96" y="388" text-anchor="middle">LOW</text><text x="288" y="388" text-anchor="middle">MED</text><text x="512" y="388" text-anchor="middle">HIGH</text>
+                  <text x="320" y="414" text-anchor="middle">0-100 SPAM SCORE</text>
+                </g>
+              </svg>
+              <svg class="pipe-stack" viewBox="0 0 360 740" role="img" aria-label="Detector pipeline" aria-describedby="pipe2-d">
+                <desc id="pipe2-d">A submission passes validation and rate limiting, then the five-signal scorer, which checks length and vocabulary, near-duplicates, rating extremity, templated phrasing, and links and abused domains. The score, level and reasons are stored with the review and added to a moderation email with a ticket ID and a delete command. A human makes the decision; the system never auto-rejects. Scores under 30 are low, 30 to 59 medium, 60 and up high.</desc>
+                <defs><marker id="arr3" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L8 4L0 8z" class="bp-head"/></marker></defs>
+                <rect class="bp-box" x="30" y="10" width="300" height="44"/><text x="180" y="37" text-anchor="middle">SUBMISSION</text>
+                <path class="bp-line" d="M180 54V78" marker-end="url(#arr3)"/>
+                <rect class="bp-box" x="30" y="82" width="300" height="44"/><text x="180" y="109" text-anchor="middle">VALIDATION + RATE LIMIT</text>
+                <path class="bp-line" d="M180 126V150" marker-end="url(#arr3)"/>
+                <rect class="bp-box is-signal" x="30" y="154" width="300" height="44"/><text x="180" y="181" text-anchor="middle">FIVE-SIGNAL SCORER</text>
+                <path class="bp-line bp-dash" d="M180 198V214"/>
+                <rect class="bp-panel" x="30" y="214" width="300" height="136"/>
+                <g class="bp-dim">
+                  <text x="46" y="242">1 LENGTH + VOCABULARY</text>
+                  <text x="46" y="266">2 NEAR-DUPLICATE (JACCARD)</text>
+                  <text x="46" y="290">3 RATING EXTREMITY</text>
+                  <text x="46" y="314">4 TEMPLATED PHRASING</text>
+                  <text x="46" y="338">5 LINKS + ABUSED DOMAINS</text>
+                </g>
+                <path class="bp-line" d="M180 350V374" marker-end="url(#arr3)"/>
+                <rect class="bp-box" x="30" y="378" width="300" height="56"/><text x="180" y="403" text-anchor="middle">SCORE, LEVEL +</text><text x="180" y="421" text-anchor="middle">REASONS STORED</text>
+                <path class="bp-line" d="M180 434V458" marker-end="url(#arr3)"/>
+                <rect class="bp-box" x="30" y="462" width="300" height="56"/><text x="180" y="487" text-anchor="middle">MODERATION EMAIL</text><text class="bp-sub" x="180" y="505" text-anchor="middle">(TICKET ID + DELETE COMMAND)</text>
+                <path class="bp-line" d="M180 518V542" marker-end="url(#arr3)"/>
+                <rect class="bp-box is-signal" x="30" y="546" width="300" height="44"/><text x="180" y="573" text-anchor="middle">HUMAN DECISION</text>
+                <text class="bp-note" x="180" y="614" text-anchor="middle">NEVER AUTO-REJECTS</text>
+                <g class="bp-dim">
+                  <line x1="30" y1="668" x2="330" y2="668"/>
+                  <line x1="30" y1="660" x2="30" y2="676"/><line x1="120" y1="660" x2="120" y2="676"/><line x1="210" y1="660" x2="210" y2="676"/><line x1="330" y1="660" x2="330" y2="676"/>
+                  <text x="30" y="650">0</text><text x="120" y="650" text-anchor="middle">30</text><text x="210" y="650" text-anchor="middle">60</text><text x="330" y="650" text-anchor="end">100</text>
+                  <text x="75" y="696" text-anchor="middle">LOW</text><text x="165" y="696" text-anchor="middle">MED</text><text x="270" y="696" text-anchor="middle">HIGH</text>
+                  <text x="180" y="724" text-anchor="middle">0-100 SPAM SCORE</text>
+                </g>
+              </svg>
+              <figcaption class="label">Fig. 05 · Detector pipeline, five signals and score bands</figcaption>
+            </figure>
+            <figure class="exhibit ex-e4-email" data-exhibit="e4-email">
+            <div class="ex-head"><span class="ex-tag label">Demo data</span></div>
+            <div class="ex-stage" role="group" aria-label="Interactive flagged moderation email" aria-describedby="e4-email-desc"></div>
+            <p class="ex-desc" id="e4-email-desc">A fictional low-effort review and the moderation email it triggers. The score is computed live by the same scorer as the detector demo below; hover a reason to see which fields set it off.</p>
+            <details class="ex-data"><summary class="label">View data</summary><div class="table-wrap"><table class="table"><thead><tr><th scope="col">Signal</th><th scope="col">Points</th><th scope="col">Why</th></tr></thead><tbody><tr><td>Length + vocabulary</td><td>+30</td><td>Extremely short review text (&lt;20 chars)</td></tr><tr><td>Templated phrasing</td><td>+15</td><td>Generic/templated phrasing ("none")</td></tr><tr><td>Rating extremity</td><td>+15</td><td>Extreme rating (10/10) paired with thin review text</td></tr><tr><td>Near-duplicate</td><td>0</td><td>No overlap</td></tr><tr><td>Links</td><td>0</td><td>No links</td></tr><tr><td><b>Total</b></td><td><b>60 / 100</b></td><td><b>HIGH</b>: flag only, a human decides</td></tr></tbody></table></div></details>
+            <noscript><img src="/assets/img/exhibits/internlog-flagged-email.webp" width="1100" height="928" alt="Screenshot of a moderation email for a flagged review" loading="lazy" decoding="async"></noscript>
+            <figcaption class="ex-cap label">Fig. 06 · Flagged moderation email</figcaption>
+          </figure>
+          </div>
+
+          <section class="detector" id="detector" aria-labelledby="try-title">
+            <div class="detector-head label"><h3 id="try-title" class="label">Try the detector</h3><span>A simplified demo, not the production code.</span></div>
+            <div class="detector-form" role="group" aria-labelledby="try-title">
+              <div class="field-row">
+                <div class="field"><label for="d-pros">Pros</label><textarea id="d-pros" name="pros" rows="3" maxlength="1500"></textarea></div>
+                <div class="field"><label for="d-cons">Cons</label><textarea id="d-cons" name="cons" rows="3" maxlength="1500"></textarea></div>
+                <div class="field"><label for="d-day">A day in the life</label><textarea id="d-day" name="dayInLife" rows="3" maxlength="1500"></textarea></div>
+              </div>
+              <div class="field field-rating">
+                <label for="d-rating">Rating <span data-rating-value>5/10</span></label>
+                <input id="d-rating" name="rating" type="range" min="1" max="10" step="1" value="5">
+              </div>
+              <div class="btn-row">
+                <button class="btn btn-secondary" type="button" data-example="junk">Try a junk review</button>
+                <button class="btn btn-secondary" type="button" data-example="real">Try a real review</button>
+              </div>
+            </div>
+            <div class="readout" aria-live="polite" aria-atomic="true">
+              <div class="readout-top">
+                <span class="label dim">Score</span>
+                <span class="score-num glow" data-score>--</span>
+                <span class="meter" aria-hidden="true"><i></i><span class="band band-30"></span><span class="band band-60"></span></span>
+                <span class="level-chip" data-level="low">waiting</span>
+              </div>
+              <ul class="reasons"><li class="none">Type a review, or try one of the examples.</li></ul>
+            </div>
+            <noscript><p class="label dim">The demo needs JavaScript. The rules it runs are listed above.</p></noscript>
+          </section>
+
+          <h3 class="h3 glow">Security</h3>
+          <p>Tiered rate limiting (general, write, admin) with trust proxy set correctly behind Render; server-side validation (rating 1–10, 250-word limit per field); an admin key, compared in constant time, required to create or edit companies and to delete reviews (401 without it); escapeHtml() on user-controlled output, including quotes, which closed an attribute-injection hole in the company dropdown (the first XSS fix came from a CodeQL finding); row-level security enabled on the tables with no policies and server-only access; no user accounts, so little personal data; Privacy Policy, Terms and SECURITY.md plus a required policy-agreement checkbox; CodeQL and Dependabot scanning; 36 automated tests on every push.</p>
+
+          <aside class="callout" aria-labelledby="hardening-title">
+            <h3 class="label" id="hardening-title">Hardening pass (Nov 2026)</h3>
+            <ul>
+              <li>Company create and edit endpoints were open. They now need the admin key and return 401 without it, confirmed with a live request in production.</li>
+              <li>The company list ran one query per company, which could exhaust Supabase's 15-connection pool as the site grew. It's now one aggregated query.</li>
+              <li>escapeHtml() didn't escape quotes, which allowed attribute injection. Fixed and covered by tests.</li>
+              <li>Added 36 tests (admin auth, rate-limit tiers, the single-query behavior, escaping, the fraud scorer) that run in GitHub Actions on every push.</li>
+              <li>Removed an unused email dependency, upgraded to Express 5 and cleared every npm audit finding.</li>
+            </ul>
+          </aside>
+
+          <h3 class="h3 glow">Moderation and product</h3>
+          <p>An email for every new review and report; a report modal for community flagging; a scope guardrail that keeps the site internships-only; company verification and tiering (Bronze, Silver, Gold) with leaderboards; search, role filtering and sorting; loading spinners; SEO and Open Graph tags; launch README with badges.</p>
+
+          <h3 class="h3 glow">How I work</h3>
+          <p>Prototype in a sandbox, then hand off tested code. I ran the scorer against realistic good and junk reviews before it touched the repo, and verified each step with syntax checks, grep, a local boot and a live end-to-end test (a thin review got flagged, a real one did not). I pull before pushing and resolve merge conflicts with the security fix preserved. After an accidental mass deletion, I rebuilt the data from the moderation emails.</p>
+
+          <h3 class="h3 glow">What I learned</h3>
+          <p>Supabase's direct connection is IPv6-only, so Render's free tier needs the session pooler. Render's free tier blocks SMTP ports, so email has to go over an HTTPS API.</p>
+
+          <h3 class="h3 glow">What I'm improving next</h3>
+          <ul class="ticks">
+            <li>Add automated database backups.</li>
+            <li>Record moderator decisions. Deleting a review currently removes its row, so the outcome is lost. Keeping decisions next to the stored score and reasons is the prerequisite for a labeled dataset and a future trained stage.</li>
+          </ul>
+
+          <ul class="chips" aria-label="Stack">
+            <li class="chip">Node.js</li><li class="chip">Express 5</li><li class="chip">Vanilla JS</li><li class="chip">Supabase Postgres</li><li class="chip">Render</li><li class="chip">GitHub Actions</li><li class="chip">CodeQL</li>
+          </ul>
+        </section>
+
+        <!-- ─────────────────────────── 02 FLYRANK -->
+        <section class="case" id="flyrank" aria-labelledby="flyrank-title">
+          <span class="eyebrow label"><b class="glow">02</b> / FlyRank ML internship track</span>
+          <h2 class="h2 glow" id="flyrank-title">Search Content Decline Analysis</h2>
+          <p class="lede">A reproducible pipeline that ranks 30,000 pages for content refresh and tests whether a model beats a simple rule.</p>
+          <div class="split">
+            <ul class="ticks">
+              <li>Built a Python, pandas and scikit-learn pipeline on an anonymized 30,000-page search dataset.</li>
+              <li>Compared a hand-written rule against decision trees using Precision@K. At K=50 the depth-2 and depth-3 trees scored 0.60 and 0.72 against 0.68 for the rule, measured in-sample.</li>
+              <li>Tested whether keyword search volume predicts impressions. The correlation was about 0.00 across all 30,000 pages and across the 21,994 pages with 100+ impressions.</li>
+              <li>Demonstrated how target leakage inflates results.</li>
+            </ul>
+            <figure class="chart" data-chart="p50">
+              <table class="chart-data">
+                <caption>Precision@50, in-sample</caption>
+                <thead><tr><th scope="col">Approach</th><th scope="col">Precision@50</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row">Hand-written rule</th><td>0.68</td></tr>
+                  <tr><th scope="row">Depth-2 tree</th><td>0.60</td></tr>
+                  <tr><th scope="row">Depth-3 tree</th><td>0.72</td></tr>
+                </tbody>
+              </table>
+              <figcaption class="label">Precision@50 · in-sample, so this doesn't show the trees beat the rule</figcaption>
+            </figure>
+          </div>
+          <p class="callout callout-note"><span class="label">Honesty note</span> These numbers are in-sample, so they don't show that the trees beat the rule.</p>
+          <p class="meta-row label">Python <span aria-hidden="true">·</span> pandas <span aria-hidden="true">·</span> NumPy <span aria-hidden="true">·</span> scikit-learn <span aria-hidden="true">·</span> Google Colab</p>
+          <p class="dim small">Program: FlyRank self-paced ML internship track (Nov 2026 to present).</p>
+          <a class="btn btn-secondary" href="https://github.com/nicklukekurian-web/flyrank-ml-internship" rel="noopener noreferrer">Repo on GitHub <span aria-hidden="true">↗</span></a>
+        </section>
+
+        <!-- ─────────────────────────── 03 CHECKPOINT -->
+        <section class="case" id="checkpoint" aria-labelledby="checkpoint-title">
+          <span class="eyebrow label"><b class="glow">03</b> / Open-source Claude skill</span>
+          <h2 class="h2 glow" id="checkpoint-title">Checkpoint Study Path</h2>
+          <div class="split split-media">
+            <figure class="video-card" data-video>
+              <div class="crt-frame video-frame">
+                <!-- [html-validate-disable-next no-autoplay -- muted, starts only when 40% visible, has Pause (WCAG 2.2.2), and js/video.js never autoplays under reduced motion] -->
+                <video muted autoplay loop playsinline preload="none" width="1280" height="720" poster="/assets/video/checkpoint-demo-poster.webp" aria-describedby="checkpoint-desc" data-mp4="/assets/video/checkpoint-demo-720.mp4" data-webm="/assets/video/checkpoint-demo-720.webm"></video>
+                <button class="video-play" type="button" aria-label="Play the Checkpoint Study Path demo" hidden>Play <span aria-hidden="true">▶</span></button>
+              </div>
+              <div class="video-controls label">
+                <button type="button" data-video-pause>Pause</button>
+                <button type="button" data-video-mute>Unmute</button>
+                <span class="sr-only" role="status" aria-live="polite" data-video-status></span>
+              </div>
+              <noscript><p class="label dim"><a href="/assets/video/checkpoint-demo-720.mp4">Watch the 30-second demo (MP4)</a></p></noscript>
+            </figure>
+            <div>
+              <p class="lede">A free, open-source Claude skill that turns your slides into a study plan and a mastery-gated quiz.</p>
+              <p>It builds a study plan from course materials, computes the score needed, groups questions into checkpoints instead of chapters, brings missed questions back three questions later, and checks answer keys with a script. MIT license, built for students.</p>
+              <p class="note label dim">Requires a paid Claude plan.</p>
+              <p class="sr-only" id="checkpoint-desc">A 30-second pixel-art demo with a music soundtrack and no narration. Every message is shown as on-screen text. It opens with "Exam in 9 days" and a wall of lecture decks and homework, then the title "Checkpoint Study Path, an exam-prep skill for Claude". A study plan shows the score needed on the final and a week-by-week timeline. A checkpoint map shows a cleared checkpoint unlocking the next, and a missed question coming back three questions later. A mixed review draws ten random questions from cleared checkpoints, and a review loop follows. It ends on the slash command and the GitHub link.</p>
+              <a class="btn btn-secondary" href="https://github.com/nicklukekurian-web/checkpoint-study-path" rel="noopener noreferrer">Repo on GitHub <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </section>
+
+        <!-- ─────────────────────────── 04 MINDSOFT -->
+        <section class="case" id="mindsoft" aria-labelledby="mindsoft-title">
+          <span class="eyebrow label"><b class="glow">04</b> / Summer 2026 internship</span>
+          <h2 class="h2 glow" id="mindsoft-title">MindSoft Solutions internship</h2>
+          <p class="lede">IT and Web Development Intern at MindSoft Solutions LLC, June to August 2026 (Allen, TX, hybrid).</p>
+          <p>I designed and built the company's official website from scratch, deployed it through Git, and wrote client-facing technical content on cybersecurity, cloud and network infrastructure services. Details are under Experience below.</p>
+          <a class="btn btn-secondary" href="https://github.com/nicklukekurian-web/mindsoft-solutions-website" rel="noopener noreferrer">Repo on GitHub <span aria-hidden="true">↗</span></a>
+        </section>
+
+        <!-- ─────────────────────────── 05 COMPETITIONS -->
+        <section class="case" id="competitions" aria-labelledby="competitions-title">
+          <span class="eyebrow label"><b class="glow">05</b> / Competitions</span>
+          <h2 class="h2 glow" id="competitions-title">Competitions</h2>
+
+          <h3 class="h3 glow">National Cyber League, Fall 2026 Individual Game</h3>
+          <p>Ranked {{ncl.rank}} of {{ncl.total}} (top ~{{ncl.top}}%). Scored 2,335 of 3,000 points at 84.9% accuracy (141 of 166 correct, 0 skipped) across nine categories in a solo weekend competition.</p>
+          <p class="note label dim">Results are official after NCL's audit announcement.</p>
+          <!-- The Scouting Report line stays hidden until links.nclScoutingReport is set in data/site.js (js/site-links.js shows it). -->
+          <p class="ncl-report" data-site-link-row="nclScoutingReport" data-site-link-text="NCL Scouting Report" hidden></p>
+          <figure class="chart" data-chart="ncl">
+            <table class="chart-data">
+              <caption>NCL Fall 2026 points by category</caption>
+              <thead><tr><th scope="col">Category</th><th scope="col">Points</th><th scope="col">Out of</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Log Analysis</th><td>300</td><td>300</td></tr>
+                <tr><th scope="row">OSINT</th><td>385</td><td>390</td></tr>
+                <tr><th scope="row">Password Cracking</th><td>275</td><td>335</td></tr>
+                <tr><th scope="row">Cryptography</th><td>290</td><td>375</td></tr>
+                <tr><th scope="row">Forensics</th><td>245</td><td>300</td></tr>
+                <tr><th scope="row">Network Traffic Analysis</th><td>230</td><td>300</td></tr>
+                <tr><th scope="row">Exploitation and Enumeration</th><td>210</td><td>300</td></tr>
+                <tr><th scope="row">Scanning and Reconnaissance</th><td>200</td><td>300</td></tr>
+                <tr><th scope="row">Web Application Exploitation</th><td>100</td><td>300</td></tr>
+              </tbody>
+            </table>
+            <figcaption class="label">Next focus: web application exploitation (100/300).</figcaption>
+          </figure>
+          <p class="note label dim ncl-survey">Survey: 100 / 100 (not a competition category)</p>
+          <figure class="exhibit ex-e5-ncl" data-exhibit="e5-ncl">
+            <div class="ex-head"><span class="ex-tag label">From the Cyber Skyline report</span></div>
+            <div class="ex-stage" role="group" aria-label="Interactive NCL Fall 2026 terminal report" aria-describedby="e5-ncl-desc"></div>
+            <p class="ex-desc" id="e5-ncl-desc">My NCL Fall 2026 Individual Game report as a terminal: rank and totals first, then five charts you can inspect. My values are exact; other participants&#x27; values are approximate readings of the report.</p>
+            <details class="ex-data"><summary class="label">View data</summary><div class="table-wrap"><table class="table"><caption>NCL Fall 2026 Individual Game</caption><thead><tr><th scope="col">Measure</th><th scope="col">Value</th></tr></thead><tbody><tr><td>Rank</td><td>{{ncl.rank}} of {{ncl.total}} (top ~{{ncl.top}}%)</td></tr><tr><td>Points</td><td>2,335 / 3,000</td></tr><tr><td>Accuracy</td><td>84.9%</td></tr><tr><td>Completion</td><td>86.5%</td></tr><tr><td>Correct</td><td>141 / 166</td></tr><tr><td>Skipped</td><td>0</td></tr><tr><td>Hints</td><td>3</td></tr><tr><td>Completion: OSINT</td><td>100%</td></tr><tr><td>Completion: Log Analysis</td><td>100%</td></tr><tr><td>Completion: Network Traffic Analysis</td><td>94%</td></tr><tr><td>Completion: Forensics</td><td>94%</td></tr><tr><td>Completion: Cryptography</td><td>93%</td></tr><tr><td>Completion: Exploitation and Enumeration</td><td>90%</td></tr><tr><td>Completion: Password Cracking</td><td>76%</td></tr><tr><td>Completion: Scanning and Reconnaissance</td><td>67%</td></tr><tr><td>Completion: Web Application Exploitation</td><td>27%</td></tr></tbody></table></div></details>
+            <figcaption class="ex-cap label">Fig. 07 · NCL Fall 2026 report</figcaption>
+          </figure>
+          <div class="shots shots-single" data-site-image="nclBadge" data-site-image-alt="NCL Fall 2026 digital badge" hidden></div>
+
+          <h3 class="h3 glow">CSAW CTF 2026, team captain</h3>
+          <p>Captained a 3-member UT Dallas Computer Security Group team ("hugh_hack") in a 48-hour jeopardy-style CTF. The team placed 260th, roughly the top 20 to 25% of scoring teams, solving challenges in six categories: Web, Forensics, Cryptography, Misc, OSINT and Reverse Engineering.</p>
+          <figure class="exhibit ex-e6-csaw" data-exhibit="e6-csaw">
+            <div class="ex-head"><span class="ex-tag label">Team result</span></div>
+            <div class="ex-stage" role="group" aria-label="Interactive CSAW CTF 2026 result card" aria-describedby="e6-csaw-desc"></div>
+            <p class="ex-desc" id="e6-csaw-desc">CSAW CTF 2026 as a status card: the team placed 260th, in the top 20–25% band of a field of 1,000+ scoring teams. The totals at the bottom are the team&#x27;s.</p>
+            <details class="ex-data"><summary class="label">View data</summary><div class="table-wrap"><table class="table"><thead><tr><th scope="col">Measure</th><th scope="col">Value</th></tr></thead><tbody><tr><td>Role</td><td>Team Captain, hugh_hack (UTD Computer Security Group)</td></tr><tr><td>Place</td><td>260th, top 20–25%</td></tr><tr><td>Field</td><td>1,000+ scoring teams, historically</td></tr><tr><td>Categories solved</td><td>WEB, FORENSICS, CRYPTO, MISC, OSINT, REV</td></tr><tr><td>Team points</td><td>912</td></tr><tr><td>Challenges solved (team)</td><td>10</td></tr><tr><td>Duration</td><td>48 hours, Sept 2026</td></tr></tbody></table></div></details>
+            <figcaption class="ex-cap label">Fig. 08 · CSAW CTF 2026</figcaption>
+          </figure>
+        </section>
+
+        <!-- ─────────────────────────── 06 CERTIFICATIONS -->
+        <section class="case" id="certifications" aria-labelledby="certs-title">
+          <span class="eyebrow label"><b class="glow">06</b> / Certifications and honors</span>
+          <h2 class="h2 glow" id="certs-title">Certifications and honors</h2>
+          <div class="table-wrap">
+            <table class="table">
+              <thead><tr><th scope="col">Item</th><th scope="col">Issuer</th><th scope="col">Date</th></tr></thead>
+              <tbody>
+                <tr><td>CS50: Introduction to Artificial Intelligence with Python</td><td><svg class="pix issuer-ico" viewBox="0 0 16 16" aria-hidden="true" focusable="false" shape-rendering="crispEdges"><use href="/assets/icons/sprite.svg#book"/></svg>Harvard University</td><td>Sept 2026</td></tr>
+                <tr><td>Python Programming Essentials</td><td><svg class="pix issuer-ico" viewBox="0 0 16 16" aria-hidden="true" focusable="false" shape-rendering="crispEdges"><use href="/assets/icons/sprite.svg#mortarboard"/></svg>Rice University</td><td>Jul 2026</td></tr>
+                <tr><td>AP Scholar with Distinction</td><td><svg class="pix issuer-ico" viewBox="0 0 16 16" aria-hidden="true" focusable="false" shape-rendering="crispEdges"><use href="/assets/icons/sprite.svg#award"/></svg>College Board</td><td>2024</td></tr>
+                <tr><td>National Society of Leadership and Success (inductee)</td><td><svg class="pix issuer-ico" viewBox="0 0 16 16" aria-hidden="true" focusable="false" shape-rendering="crispEdges"><use href="/assets/icons/sprite.svg#torch"/></svg>NSLS</td><td>May 2026</td></tr>
+                <tr><td>CompTIA Security+: in progress</td><td><svg class="pix issuer-ico" viewBox="0 0 16 16" aria-hidden="true" focusable="false" shape-rendering="crispEdges"><use href="/assets/icons/sprite.svg#padlock"/></svg>CompTIA</td><td><span class="tag-progress">Target January 2027</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ─────────────────────────── 07 EXPERIENCE, EDUCATION, SKILLS -->
+        <section class="case" id="skills" aria-labelledby="skills-title">
+          <span class="eyebrow label"><b class="glow">07</b> / Experience, education, skills</span>
+          <h2 class="h2 glow" id="skills-title">Experience, education, skills</h2>
+
+          <h3 class="h3 glow">Journey</h3>
+          <ol class="journey">
+            <li><span class="when label">2024</span><span class="what">AP Scholar with Distinction</span></li>
+            <li><span class="when label">Aug 2025</span><span class="what">University of Texas at Dallas, B.S. in Computer Science</span></li>
+            <li><span class="when label">Jun–Aug 2026</span><span class="what">MindSoft Solutions LLC, IT and Web Development Intern</span></li>
+            <li class="is-now"><span class="when label">Nov 2026</span><span class="what">FlyRank, Machine Learning Intern (self-paced track)</span></li>
+          </ol>
+
+          <div class="exp">
+            <article class="exp-item">
+              <h3 class="h3 glow">IT and Web Development Intern</h3>
+              <p class="label dim">MindSoft Solutions LLC · Allen, TX (hybrid) · June to August 2026</p>
+              <ul class="ticks">
+                <li>Designed and built the company's official website from scratch with HTML, CSS, JavaScript and GitHub Pages, turning IT and cybersecurity service offerings into a clear, professional site.</li>
+                <li>Deployed a responsive multi-page site managed end to end through Git.</li>
+                <li>Built a mobile navigation menu and a working contact form, and wrote client-facing technical content on cybersecurity, cloud and network infrastructure services.</li>
+              </ul>
+            </article>
+            <article class="exp-item">
+              <h3 class="h3 glow">Machine Learning Intern (self-paced track)</h3>
+              <p class="label dim">FlyRank · Nov 2026 to present</p>
+              <p>Search Content Decline Analysis project (see <a href="#flyrank">02</a>).</p>
+            </article>
+            <article class="exp-item">
+              <h3 class="h3 glow">Leadership and activities</h3>
+              <ul class="ticks">
+                <li>Team captain, CSAW CTF 2026, UT Dallas Computer Security Group (Sept 2026).</li>
+                <li>Member of ACM, the Artificial Intelligence Society (AIS) and the Computer Security Group (CSG) at UT Dallas.</li>
+              </ul>
+            </article>
+            <article class="exp-item">
+              <h3 class="h3 glow">Education</h3>
+              <p>University of Texas at Dallas, Richardson, TX · B.S. in Computer Science with a Certificate in Cyber Defense (in progress) · Expected May 2029.</p>
+              <p class="dim small">Relevant courses: Discrete Mathematics (CS 2305, current); Programming Fundamentals in C++ (CS 1436, Spring 2027).</p>
+            </article>
+          </div>
+
+          <h3 class="h3 glow">Skills</h3>
+          <div class="table-wrap">
+            <table class="table">
+              <thead><tr><th scope="col">Group</th><th scope="col">Skills</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Languages</th><td>Python, JavaScript, C++, MATLAB, HTML/CSS, SQL</td></tr>
+                <tr><th scope="row">Web and tools</th><td>Node.js, Express, PostgreSQL (Supabase), Git and GitHub, GitHub Actions (CI/CD), GitHub Pages</td></tr>
+                <tr><th scope="row">ML and data</th><td>scikit-learn (decision trees), pandas, NumPy, model evaluation (Precision@K, train/test leakage), Google Colab</td></tr>
+                <tr><th scope="row">Security and AI</th><td>CTF skills (web, forensics, cryptography, OSINT), AI foundations (search, knowledge representation, neural networks), CompTIA Security+ (in progress)</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <a class="back-top link-cmd" href="#main">Back to the top <span aria-hidden="true">↑</span></a>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- footer:start -->
+  <footer class="site-footer">
+    <span>Privacy: no tracking</span>
+    <span class="center">© 2026 Nicholas Kurian · Built with HTML, CSS and JavaScript · <a href="https://github.com/nicklukekurian-web/portfolio" rel="noopener noreferrer">Source on GitHub</a></span>
+    <span class="right"><a class="footer-top" href="#main">Back to top <span aria-hidden="true">↑</span></a></span>
+  </footer>
+  <!-- footer:end -->
+</body>
+</html>

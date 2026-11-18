@@ -1,0 +1,779 @@
+{
+ "_source": "Digitized by eye from the Cyber Skyline score report panels on Nick's NCL Fall 2026 card (assets/source-images/ncl-terminal-card.png). Everything here about other participants is approximate. Nick's own values come from data/ncl.json.",
+ "_todo": "TODO(nick): name these series (the timeline panel has no legend)",
+ "timeline": {
+  "labels": [
+   "Start",
+   "Oct 23",
+   "Oct 24",
+   "Oct 24 06:00",
+   "Oct 24 12:00",
+   "Oct 24 18:00",
+   "Oct 25",
+   "Oct 25 06:00",
+   "Oct 25 12:00",
+   "Oct 25 18:00"
+  ],
+  "series": [
+   {
+    "name": "You",
+    "mine": true,
+    "points": [
+     430,
+     500,
+     500,
+     500,
+     1260,
+     2090,
+     2240,
+     2240,
+     2330,
+     2335
+    ]
+   },
+   {
+    "name": "Comparison series A",
+    "points": [
+     260,
+     770,
+     1070,
+     1140,
+     1360,
+     1660,
+     1840,
+     1900,
+     2060,
+     2330
+    ]
+   },
+   {
+    "name": "Comparison series B",
+    "points": [
+     90,
+     230,
+     300,
+     320,
+     410,
+     520,
+     600,
+     630,
+     750,
+     1030
+    ]
+   },
+   {
+    "name": "Comparison series C",
+    "points": [
+     20,
+     60,
+     80,
+     80,
+     110,
+     150,
+     170,
+     170,
+     180,
+     260
+    ]
+   }
+  ]
+ },
+ "bubbles": [
+  {
+   "accuracy": 2.5,
+   "points": 150,
+   "r": 2
+  },
+  {
+   "accuracy": 12.5,
+   "points": 150,
+   "r": 2
+  },
+  {
+   "accuracy": 17.5,
+   "points": 150,
+   "r": 2
+  },
+  {
+   "accuracy": 17.5,
+   "points": 450,
+   "r": 1
+  },
+  {
+   "accuracy": 22.5,
+   "points": 150,
+   "r": 2
+  },
+  {
+   "accuracy": 22.5,
+   "points": 450,
+   "r": 2
+  },
+  {
+   "accuracy": 22.5,
+   "points": 2850,
+   "r": 1
+  },
+  {
+   "accuracy": 27.5,
+   "points": 150,
+   "r": 2
+  },
+  {
+   "accuracy": 27.5,
+   "points": 450,
+   "r": 2
+  },
+  {
+   "accuracy": 27.5,
+   "points": 750,
+   "r": 1
+  },
+  {
+   "accuracy": 27.5,
+   "points": 1350,
+   "r": 1
+  },
+  {
+   "accuracy": 32.5,
+   "points": 150,
+   "r": 2
+  },
+  {
+   "accuracy": 32.5,
+   "points": 450,
+   "r": 2
+  },
+  {
+   "accuracy": 32.5,
+   "points": 750,
+   "r": 2
+  },
+  {
+   "accuracy": 32.5,
+   "points": 1050,
+   "r": 2
+  },
+  {
+   "accuracy": 32.5,
+   "points": 1650,
+   "r": 1
+  },
+  {
+   "accuracy": 37.5,
+   "points": 150,
+   "r": 3
+  },
+  {
+   "accuracy": 37.5,
+   "points": 450,
+   "r": 2
+  },
+  {
+   "accuracy": 37.5,
+   "points": 750,
+   "r": 2
+  },
+  {
+   "accuracy": 37.5,
+   "points": 1050,
+   "r": 2
+  },
+  {
+   "accuracy": 37.5,
+   "points": 1350,
+   "r": 2
+  },
+  {
+   "accuracy": 42.5,
+   "points": 150,
+   "r": 3
+  },
+  {
+   "accuracy": 42.5,
+   "points": 450,
+   "r": 3
+  },
+  {
+   "accuracy": 42.5,
+   "points": 750,
+   "r": 2
+  },
+  {
+   "accuracy": 42.5,
+   "points": 1050,
+   "r": 2
+  },
+  {
+   "accuracy": 42.5,
+   "points": 1350,
+   "r": 2
+  },
+  {
+   "accuracy": 42.5,
+   "points": 1650,
+   "r": 2
+  },
+  {
+   "accuracy": 42.5,
+   "points": 2250,
+   "r": 1
+  },
+  {
+   "accuracy": 47.5,
+   "points": 150,
+   "r": 3
+  },
+  {
+   "accuracy": 47.5,
+   "points": 450,
+   "r": 3
+  },
+  {
+   "accuracy": 47.5,
+   "points": 750,
+   "r": 3
+  },
+  {
+   "accuracy": 47.5,
+   "points": 1050,
+   "r": 2
+  },
+  {
+   "accuracy": 47.5,
+   "points": 1350,
+   "r": 2
+  },
+  {
+   "accuracy": 47.5,
+   "points": 1650,
+   "r": 2
+  },
+  {
+   "accuracy": 47.5,
+   "points": 1950,
+   "r": 2
+  },
+  {
+   "accuracy": 47.5,
+   "points": 2250,
+   "r": 2
+  },
+  {
+   "accuracy": 52.5,
+   "points": 150,
+   "r": 3
+  },
+  {
+   "accuracy": 52.5,
+   "points": 450,
+   "r": 3
+  },
+  {
+   "accuracy": 52.5,
+   "points": 750,
+   "r": 3
+  },
+  {
+   "accuracy": 52.5,
+   "points": 1050,
+   "r": 3
+  },
+  {
+   "accuracy": 52.5,
+   "points": 1350,
+   "r": 2
+  },
+  {
+   "accuracy": 52.5,
+   "points": 1650,
+   "r": 2
+  },
+  {
+   "accuracy": 52.5,
+   "points": 1950,
+   "r": 2
+  },
+  {
+   "accuracy": 52.5,
+   "points": 2250,
+   "r": 2
+  },
+  {
+   "accuracy": 52.5,
+   "points": 2550,
+   "r": 1
+  },
+  {
+   "accuracy": 57.5,
+   "points": 150,
+   "r": 4
+  },
+  {
+   "accuracy": 57.5,
+   "points": 450,
+   "r": 3
+  },
+  {
+   "accuracy": 57.5,
+   "points": 750,
+   "r": 3
+  },
+  {
+   "accuracy": 57.5,
+   "points": 1050,
+   "r": 3
+  },
+  {
+   "accuracy": 57.5,
+   "points": 1350,
+   "r": 3
+  },
+  {
+   "accuracy": 57.5,
+   "points": 1650,
+   "r": 2
+  },
+  {
+   "accuracy": 57.5,
+   "points": 1950,
+   "r": 2
+  },
+  {
+   "accuracy": 57.5,
+   "points": 2250,
+   "r": 2
+  },
+  {
+   "accuracy": 57.5,
+   "points": 2550,
+   "r": 2
+  },
+  {
+   "accuracy": 62.5,
+   "points": 150,
+   "r": 4
+  },
+  {
+   "accuracy": 62.5,
+   "points": 450,
+   "r": 4
+  },
+  {
+   "accuracy": 62.5,
+   "points": 750,
+   "r": 3
+  },
+  {
+   "accuracy": 62.5,
+   "points": 1050,
+   "r": 3
+  },
+  {
+   "accuracy": 62.5,
+   "points": 1350,
+   "r": 3
+  },
+  {
+   "accuracy": 62.5,
+   "points": 1650,
+   "r": 3
+  },
+  {
+   "accuracy": 62.5,
+   "points": 1950,
+   "r": 2
+  },
+  {
+   "accuracy": 62.5,
+   "points": 2250,
+   "r": 2
+  },
+  {
+   "accuracy": 62.5,
+   "points": 2550,
+   "r": 2
+  },
+  {
+   "accuracy": 67.5,
+   "points": 150,
+   "r": 4
+  },
+  {
+   "accuracy": 67.5,
+   "points": 450,
+   "r": 4
+  },
+  {
+   "accuracy": 67.5,
+   "points": 750,
+   "r": 4
+  },
+  {
+   "accuracy": 67.5,
+   "points": 1050,
+   "r": 3
+  },
+  {
+   "accuracy": 67.5,
+   "points": 1350,
+   "r": 3
+  },
+  {
+   "accuracy": 67.5,
+   "points": 1650,
+   "r": 3
+  },
+  {
+   "accuracy": 67.5,
+   "points": 1950,
+   "r": 3
+  },
+  {
+   "accuracy": 67.5,
+   "points": 2250,
+   "r": 2
+  },
+  {
+   "accuracy": 67.5,
+   "points": 2550,
+   "r": 2
+  },
+  {
+   "accuracy": 67.5,
+   "points": 2850,
+   "r": 1
+  },
+  {
+   "accuracy": 72.5,
+   "points": 150,
+   "r": 4
+  },
+  {
+   "accuracy": 72.5,
+   "points": 450,
+   "r": 4
+  },
+  {
+   "accuracy": 72.5,
+   "points": 750,
+   "r": 4
+  },
+  {
+   "accuracy": 72.5,
+   "points": 1050,
+   "r": 4
+  },
+  {
+   "accuracy": 72.5,
+   "points": 1350,
+   "r": 3
+  },
+  {
+   "accuracy": 72.5,
+   "points": 1650,
+   "r": 3
+  },
+  {
+   "accuracy": 72.5,
+   "points": 1950,
+   "r": 3
+  },
+  {
+   "accuracy": 72.5,
+   "points": 2250,
+   "r": 3
+  },
+  {
+   "accuracy": 72.5,
+   "points": 2550,
+   "r": 2
+  },
+  {
+   "accuracy": 72.5,
+   "points": 2850,
+   "r": 2
+  },
+  {
+   "accuracy": 77.5,
+   "points": 150,
+   "r": 4
+  },
+  {
+   "accuracy": 77.5,
+   "points": 450,
+   "r": 4
+  },
+  {
+   "accuracy": 77.5,
+   "points": 750,
+   "r": 4
+  },
+  {
+   "accuracy": 77.5,
+   "points": 1050,
+   "r": 4
+  },
+  {
+   "accuracy": 77.5,
+   "points": 1350,
+   "r": 4
+  },
+  {
+   "accuracy": 77.5,
+   "points": 1650,
+   "r": 4
+  },
+  {
+   "accuracy": 77.5,
+   "points": 1950,
+   "r": 3
+  },
+  {
+   "accuracy": 77.5,
+   "points": 2250,
+   "r": 3
+  },
+  {
+   "accuracy": 77.5,
+   "points": 2550,
+   "r": 3
+  },
+  {
+   "accuracy": 77.5,
+   "points": 2850,
+   "r": 3
+  },
+  {
+   "accuracy": 82.5,
+   "points": 150,
+   "r": 4
+  },
+  {
+   "accuracy": 82.5,
+   "points": 450,
+   "r": 4
+  },
+  {
+   "accuracy": 82.5,
+   "points": 750,
+   "r": 4
+  },
+  {
+   "accuracy": 82.5,
+   "points": 1050,
+   "r": 4
+  },
+  {
+   "accuracy": 82.5,
+   "points": 1350,
+   "r": 4
+  },
+  {
+   "accuracy": 82.5,
+   "points": 1650,
+   "r": 4
+  },
+  {
+   "accuracy": 82.5,
+   "points": 1950,
+   "r": 4
+  },
+  {
+   "accuracy": 82.5,
+   "points": 2250,
+   "r": 3
+  },
+  {
+   "accuracy": 82.5,
+   "points": 2550,
+   "r": 3
+  },
+  {
+   "accuracy": 82.5,
+   "points": 2850,
+   "r": 3
+  },
+  {
+   "accuracy": 87.5,
+   "points": 150,
+   "r": 4
+  },
+  {
+   "accuracy": 87.5,
+   "points": 450,
+   "r": 4
+  },
+  {
+   "accuracy": 87.5,
+   "points": 750,
+   "r": 4
+  },
+  {
+   "accuracy": 87.5,
+   "points": 1050,
+   "r": 4
+  },
+  {
+   "accuracy": 87.5,
+   "points": 1350,
+   "r": 4
+  },
+  {
+   "accuracy": 87.5,
+   "points": 1650,
+   "r": 4
+  },
+  {
+   "accuracy": 87.5,
+   "points": 1950,
+   "r": 4
+  },
+  {
+   "accuracy": 87.5,
+   "points": 2250,
+   "r": 4
+  },
+  {
+   "accuracy": 87.5,
+   "points": 2550,
+   "r": 3
+  },
+  {
+   "accuracy": 87.5,
+   "points": 2850,
+   "r": 3
+  },
+  {
+   "accuracy": 92.5,
+   "points": 150,
+   "r": 4
+  },
+  {
+   "accuracy": 92.5,
+   "points": 450,
+   "r": 3
+  },
+  {
+   "accuracy": 92.5,
+   "points": 750,
+   "r": 3
+  },
+  {
+   "accuracy": 92.5,
+   "points": 1050,
+   "r": 3
+  },
+  {
+   "accuracy": 92.5,
+   "points": 1350,
+   "r": 3
+  },
+  {
+   "accuracy": 92.5,
+   "points": 1650,
+   "r": 3
+  },
+  {
+   "accuracy": 92.5,
+   "points": 1950,
+   "r": 3
+  },
+  {
+   "accuracy": 92.5,
+   "points": 2250,
+   "r": 3
+  },
+  {
+   "accuracy": 92.5,
+   "points": 2550,
+   "r": 3
+  },
+  {
+   "accuracy": 92.5,
+   "points": 2850,
+   "r": 3
+  },
+  {
+   "accuracy": 92.5,
+   "points": 3100,
+   "r": 2
+  },
+  {
+   "accuracy": 97.5,
+   "points": 150,
+   "r": 4
+  },
+  {
+   "accuracy": 97.5,
+   "points": 450,
+   "r": 3
+  },
+  {
+   "accuracy": 97.5,
+   "points": 750,
+   "r": 3
+  },
+  {
+   "accuracy": 97.5,
+   "points": 1050,
+   "r": 3
+  },
+  {
+   "accuracy": 97.5,
+   "points": 1350,
+   "r": 3
+  },
+  {
+   "accuracy": 97.5,
+   "points": 1650,
+   "r": 3
+  },
+  {
+   "accuracy": 97.5,
+   "points": 1950,
+   "r": 3
+  },
+  {
+   "accuracy": 97.5,
+   "points": 2250,
+   "r": 3
+  },
+  {
+   "accuracy": 97.5,
+   "points": 2550,
+   "r": 3
+  },
+  {
+   "accuracy": 97.5,
+   "points": 2850,
+   "r": 3
+  },
+  {
+   "accuracy": 97.5,
+   "points": 3100,
+   "r": 2
+  },
+  {
+   "accuracy": 100,
+   "points": 150,
+   "r": 5
+  }
+ ],
+ "histogram": {
+  "binWidth": 10,
+  "counts": [
+   535,
+   597,
+   469,
+   429,
+   337,
+   306,
+   301,
+   270,
+   214,
+   148
+  ],
+  "note": "Participants per points-scored bin, read off the bar heights."
+ }
+}

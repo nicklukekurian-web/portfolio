@@ -1,0 +1,170 @@
+{
+ "_note": "DEMO DATA: fictional companies and reviews, as shown in Internlog's demo screens. No real users, emails or moderation data.",
+ "tiers": [
+  {
+   "id": 3,
+   "name": "Gold",
+   "label": "Tier 3 · Gold",
+   "scope": "National / global"
+  },
+  {
+   "id": 2,
+   "name": "Silver",
+   "label": "Tier 2 · Silver",
+   "scope": "State / regional"
+  },
+  {
+   "id": 1,
+   "name": "Bronze",
+   "label": "Tier 1 · Bronze",
+   "scope": "Local / entry-level"
+  }
+ ],
+ "companies": [
+  {
+   "id": "meridian",
+   "name": "Meridian Cloud Systems",
+   "tier": 3,
+   "industry": "Technology"
+  },
+  {
+   "id": "cobalt",
+   "name": "Cobalt Aerospace",
+   "tier": 3,
+   "industry": "Aerospace"
+  },
+  {
+   "id": "lonestar",
+   "name": "Lone Star Analytics",
+   "tier": 2,
+   "industry": "Data"
+  },
+  {
+   "id": "brightline",
+   "name": "Brightline Robotics",
+   "tier": 2,
+   "industry": "Robotics"
+  },
+  {
+   "id": "oakridge",
+   "name": "Oakridge Community Bank",
+   "tier": 1,
+   "industry": "Finance"
+  },
+  {
+   "id": "pinecrest",
+   "name": "Pinecrest Digital",
+   "tier": 1,
+   "industry": "Marketing"
+  }
+ ],
+ "recent": [
+  {
+   "company": "meridian",
+   "rating": 9,
+   "role": "Software Engineering Intern",
+   "text": "Owned a real feature end to end, from design doc to production rollout."
+  },
+  {
+   "company": "cobalt",
+   "rating": 8,
+   "role": "Systems Engineering Intern",
+   "text": "Real flight-hardware exposure and engineers who explain the why behind decisions."
+  },
+  {
+   "company": "lonestar",
+   "rating": 8,
+   "role": "Data Analyst Intern",
+   "text": "Clean dataset access, a patient manager, and a final project the client actually used."
+  },
+  {
+   "company": "brightline",
+   "rating": 9,
+   "role": "Controls Engineering Intern",
+   "text": "Small team, so I got to test code on physical robots in my second week."
+  },
+  {
+   "company": "oakridge",
+   "rating": 8,
+   "role": "Operations Intern",
+   "text": "Friendly staff and a clear look at how a community bank runs day to day."
+  }
+ ],
+ "meridianReviews": [
+  {
+   "id": "m1",
+   "role": "Software Engineering Intern",
+   "rating": 9,
+   "difficulty": 8,
+   "pay": 48,
+   "location": "Dallas, TX",
+   "dates": "May 2026 – Aug 2026",
+   "posted": "2026-09-02",
+   "pros": "Owned a real feature end to end, from design doc to production rollout. My mentor reviewed every pull request within a day and the team treated interns like teammates, not coffee runners.",
+   "cons": "Onboarding was a firehose in the first two weeks and the internal tooling has a steep learning curve. Parking downtown is not covered.",
+   "day": "Standup at 9:30, heads-down on my feature until lunch, code review and pairing in the afternoon. Fridays were demo day with the whole org."
+  },
+  {
+   "id": "m2",
+   "role": "Software Engineering Intern",
+   "rating": 9,
+   "difficulty": 8,
+   "pay": 48,
+   "location": "Remote",
+   "dates": "Jun 2026 – Aug 2026",
+   "posted": "2026-08-30",
+   "pros": "Strong mentorship, well-scoped project, and the pay is hard to beat. I shipped a latency fix that actually moved a dashboard metric.",
+   "cons": "Remote interns miss out on some of the in-person networking. Time zones made a couple of syncs awkward.",
+   "day": "Async updates in Slack, two scheduled pairing sessions a day, and a short written summary at end of day."
+  },
+  {
+   "id": "m3",
+   "role": "Cloud Infrastructure Intern",
+   "rating": 8,
+   "difficulty": 9,
+   "pay": 46,
+   "location": "Dallas, TX",
+   "dates": "May 2026 – Aug 2026",
+   "posted": "2026-08-24",
+   "pros": "Got hands-on with Terraform and Kubernetes on real internal services, with a mentor who walked through every change.",
+   "cons": "The interview loop was long, and on-call shadowing started before I felt ready.",
+   "day": "Morning standup, infrastructure tickets until lunch, then pairing with an SRE on deployments."
+  },
+  {
+   "id": "m4",
+   "role": "Data Platform Intern",
+   "rating": 8,
+   "difficulty": 9,
+   "pay": 44,
+   "location": "Dallas, TX",
+   "dates": "Jun 2026 – Aug 2026",
+   "posted": "2026-08-15",
+   "pros": "Built a data-quality check that now runs on every nightly load, and the team let me present it at the all-hands.",
+   "cons": "A lot of time went to waiting on access requests in the first week.",
+   "day": "Query reviews in the morning, pipeline work after lunch, and a weekly one-on-one with my manager."
+  }
+ ],
+ "flaggedEmail": {
+  "company": "Pinecrest Digital",
+  "companyId": "c_demo_pinecrest",
+  "role": "Content Intern",
+  "rating": 10,
+  "difficulty": "not given",
+  "pay": "not disclosed",
+  "location": "not given",
+  "dates": "? to ?",
+  "pros": "good",
+  "cons": "none",
+  "dayInLife": "good",
+  "reviewId": "r_demo_8f2k1x",
+  "expected": {
+   "score": 60,
+   "level": "high",
+   "reasons": [
+    "Extremely short review text (<20 chars)",
+    "Generic/templated phrasing (\"none\")",
+    "Extreme rating (10/10) paired with thin review text"
+   ]
+  }
+ }
+}

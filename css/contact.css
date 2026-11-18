@@ -1,0 +1,20 @@
+/* Contact: a full-bleed stage with the warm tunnel behind numbered link rows. */
+.contact { position: relative; min-height: 100svh; overflow: hidden; isolation: isolate; display: grid; align-items: center; }
+.contact .scene { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -2; opacity: .55; }
+.contact::after {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: radial-gradient(ellipse 70% 70% at 50% 50%, color-mix(in srgb, var(--bg) 78%, transparent), color-mix(in srgb, var(--bg) 30%, transparent));
+}
+.contact-inner { max-width: 1000px; padding-top: calc(var(--header-h) + 40px); padding-bottom: 64px; }
+.contact-title { font-size: clamp(2.25rem, 6vw, 5rem); line-height: .95; margin-bottom: 24px; text-shadow: 0 0 12px rgba(255, 196, 160, .3); }
+.contact-title .period { font-family: var(--font-mono); font-weight: 700; }   /* Doto draws "." as a plus */
+.contact-body { font-size: var(--fs-body); margin-bottom: 40px; }
+.contact-foot { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; margin-top: 28px; }
+.contact-foot .talk-copy { display: flex; align-items: center; gap: 14px; }
+.contact-foot .copy-status { margin: 0; }
+@media (max-width: 719px) {
+  .contact { align-items: start; }
+}
+@media (max-width: 380px) {
+  .contact-foot .talk-copy { flex-direction: column; align-items: stretch; width: 100%; }
+}

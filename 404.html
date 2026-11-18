@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta name="robots" content="noindex">
+  <title>Page not found | Nicholas Kurian</title>
+  <meta name="description" content="This page doesn't exist. Head back to Nicholas Kurian's portfolio.">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/crt.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/contact.css">
+  <script type="module" src="/js/main.js"></script>
+</head>
+<body data-page="404">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- chrome:start (shared header + menu; identical on every page, see tests/layout-sync.test.js) -->
+  <header class="site-header">
+    <a class="brand" href="/">Nicholas Kurian</a>
+    <nav class="site-nav" aria-label="Primary">
+      <a class="label nav-cta" href="https://github.com/nicklukekurian-web/Internlog" rel="noopener noreferrer">Internlog <span aria-hidden="true">↗</span><span class="sr-only"> on GitHub</span></a>
+      <a class="label hide-sm nav-talk" href="/contact" aria-describedby="talk-status"><span class="nav-talk-text">Let's talk</span><span class="online-dot" aria-hidden="true"></span><span class="nav-tip" id="talk-status" aria-hidden="true">Open to Summer 2027</span></a>
+      <button class="label menu-toggle" type="button" aria-expanded="false" aria-controls="menu-panel">
+        <span class="when-closed">Menu <span aria-hidden="true">≡</span></span><span class="when-open">Close</span>
+      </button>
+    </nav>
+  </header>
+  <div class="menu-backdrop"></div>
+  <div class="menu-panel" id="menu-panel" hidden>
+    <nav aria-label="Site menu">
+      <ul class="menu-rows">
+        <li><a href="/"><span>Home</span> <span>01</span></a></li>
+        <li><a href="/proof"><span>Proof</span> <span>02</span></a></li>
+        <li><a href="/contact"><span>Contact</span> <span>03</span></a></li>
+        <li><a href="/assets/Nicholas_Kurian_Resume.pdf" download><span>Resume <span aria-hidden="true">↓</span></span> <span>04</span></a></li>
+      </ul>
+      <ul class="menu-socials" aria-label="Contact links">
+        <li><a class="icon-link" href="mailto:nick.luke.kurian@gmail.com" aria-label="Email Nicholas" title="Email Nicholas" data-tip="Email"><svg class="pix" viewBox="0 0 16 16" aria-hidden="true" focusable="false" shape-rendering="crispEdges"><use href="/assets/icons/sprite.svg#email"/></svg></a></li>
+        <li><a class="icon-link" href="https://github.com/nicklukekurian-web" rel="noopener noreferrer" aria-label="GitHub profile" title="GitHub profile" data-tip="GitHub"><svg class="pix" viewBox="0 0 16 16" aria-hidden="true" focusable="false" shape-rendering="crispEdges"><use href="/assets/icons/sprite.svg#github"/></svg></a></li>
+        <li><a class="icon-link" href="https://www.linkedin.com/in/nick-kurian/" rel="noopener noreferrer" aria-label="LinkedIn profile" title="LinkedIn profile" data-tip="LinkedIn"><svg class="pix" viewBox="0 0 16 16" aria-hidden="true" focusable="false" shape-rendering="crispEdges"><use href="/assets/icons/sprite.svg#linkedin"/></svg></a></li>
+      </ul>
+    </nav>
+    <div class="menu-theme label">
+      <span id="theme-label">Theme</span>
+      <span class="theme-switch" role="group" aria-labelledby="theme-label">
+        <button type="button" data-theme-set="dark" aria-pressed="true">Dark</button>
+        <button type="button" data-theme-set="light" aria-pressed="false">Light</button>
+      </span>
+    </div>
+  </div>
+  <!-- chrome:end -->
+
+  <main id="main" class="contact">
+    <div class="contact-inner wrap">
+      <span class="eyebrow label">Error 404</span>
+      <h1 class="contact-title display glow">Signal lost</h1>
+      <p class="contact-body">There's nothing at this address. It may have moved, or the link has a typo.</p>
+      <a class="link-cmd" href="/">Back to home</a>
+    </div>
+  </main>
+
+  <!-- footer:start -->
+  <footer class="site-footer">
+    <span>Privacy: no tracking</span>
+    <span class="center">© 2026 Nicholas Kurian · Built with HTML, CSS and JavaScript · <a href="https://github.com/nicklukekurian-web/portfolio" rel="noopener noreferrer">Source on GitHub</a></span>
+    <span class="right"><a class="footer-top" href="#main">Back to top <span aria-hidden="true">↑</span></a></span>
+  </footer>
+  <!-- footer:end -->
+</body>
+</html>

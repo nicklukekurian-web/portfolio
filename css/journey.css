@@ -1,0 +1,215 @@
+/* Selected Work → About: one scroll-scrubbed journey (js/journey/*).
+   Motion comes from a single rAF loop that writes the custom properties below; they are registered
+   with inherits:false, so changing them restyles only the element itself, never its subtree.
+   Animated layout: html.js without .journey-static. Static layout (reduced motion, no WebGL2, no JS):
+   panels as a plain list, each scene as a poster with its text beneath. */
+@property --tx { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --ty { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --rx { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
+@property --ry { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
+@property --rz { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
+@property --sc { syntax: "<number>"; inherits: false; initial-value: 1; }
+@property --o { syntax: "<number>"; inherits: false; initial-value: 1; }
+
+/* ───────────────────────── 02 Selected work: the panel stack */
+.journey-work { --pw: min(54vw, 940px, 132vh); }
+.js:not(.journey-static) .journey-work { height: 730vh; }   /* (4.8 + 1.5) × 100vh of scroll + the 100vh stage (panels.js lengths) */
+.sw-stage { perspective: 1400px; perspective-origin: 60% 45%; }
+.sw-defs { position: absolute; }
+.sw-stage > .scene { z-index: 0; }                 /* the log rain, behind the panels */
+.sw-capzone { position: absolute; left: calc(50% - var(--pw) * .32); top: calc(50% + var(--pw) * .3125 - 2vh + 6px); width: var(--pw); height: 64px; pointer-events: none; }
+.sw-stage .hud-br { z-index: 3; opacity: var(--o); }
+.sw-ground { position: absolute; inset: 0; z-index: 0; background: #050507; opacity: var(--o); pointer-events: none; }
+.js:not(.journey-static) .sw-ground { --o: 0; }
+
+.sw-index { position: absolute; z-index: 3; left: var(--margin); bottom: 9vh; font-family: var(--font-mono); opacity: var(--o); }
+.sw-index-title { margin: 0 0 10px; color: var(--fg); }
+.sw-index ol { list-style: none; margin: 0; padding: 0; }
+.sw-index a {
+  display: flex; align-items: baseline; gap: .7em; padding: 5px 0; text-decoration: none;
+  color: var(--fg-dim); text-transform: uppercase; letter-spacing: var(--ls-label); font-size: var(--fs-label);
+}
+.sw-index a:hover, .sw-index a:focus-visible { color: var(--fg); }
+.sw-bullet { width: 1ch; }
+.sw-index a[aria-current="true"] { color: var(--fg); }
+.sw-index a[aria-current="true"] .sw-bullet::before { content: "●"; color: var(--accent); }
+
+.sw-panels { position: absolute; inset: 0; z-index: 1; transform-style: preserve-3d; }
+.sw-panel {
+  position: absolute; left: calc(50% - var(--pw) * .32); top: calc(50% - var(--pw) * .3125 - 2vh);
+  width: var(--pw); aspect-ratio: 16 / 10; margin: 0;
+  transform: translate3d(var(--tx), var(--ty), 0) rotateX(var(--rx)) rotateY(var(--ry)) rotateZ(var(--rz)) scale(var(--sc));
+  opacity: var(--o);
+  transform-origin: 50% 50%;
+}
+.js:not(.journey-static) .sw-panel { will-change: transform, opacity; }
+.js:not(.journey-static) .sw-panel:not([data-panel="0"]) { --o: 0; }
+.sw-screen {
+  --bg: #0b161a; --bg-2: #10222a; --fg: #f2f2f2; --fg-dim: #9fb3bf; --line: rgba(255, 255, 255, .14);
+  --line-strong: rgba(255, 255, 255, .4); --accent: #8fe3ff; color-scheme: dark;
+  position: absolute; inset: 0; overflow: hidden; clip-path: url(#crt);
+  background: radial-gradient(ellipse 80% 70% at 50% 45%, #10232c, #071015 75%); color: var(--fg);
+}
+.sw-portal .sw-screen { clip-path: url(#crt-portal); }
+/* The screen sits above the panel's link (clip-path makes it its own stacking context), so the GitHub button,
+   the video buttons and the preview hovers get the pointer; a click anywhere else on it follows the link
+   (js/journey/panels.js). The link's focus ring sits outside the screen, so it stays visible. */
+.sw-screen { z-index: 2; cursor: pointer; }
+.sw-panel.is-hidden, .sw-portal.is-portal .sw-link { pointer-events: none; }   /* invisible panels never catch a click */
+.sw-bezel { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; z-index: 2; }
+.sw-bezel path { fill: none; vector-effect: non-scaling-stroke; stroke-linejoin: round; }
+.sw-bezel .b { stroke: #000; stroke-width: 7; }
+.sw-bezel .b-r, .sw-bezel .b-c { stroke-width: 7; opacity: 0; }
+.sw-bezel .b-r { stroke: #ff2a4f; transform: translate(-.0035px, .002px); }
+.sw-bezel .b-c { stroke: #3fc8ff; transform: translate(.0035px, -.002px); }
+.sw-panel.is-moving .b-r, .sw-panel.is-moving .b-c { opacity: .25; }
+
+.sw-live { position: absolute; inset: 0; }
+.sw-link { position: absolute; inset: 0; z-index: 1; display: block; color: var(--fg); text-decoration: none; }
+.sw-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 8px; }
+.sw-name, .sw-cap { position: absolute; left: 2px; right: 0; font-family: var(--font-mono); }
+.sw-name { top: calc(100% + 16px); font-size: var(--fs-label); text-transform: uppercase; letter-spacing: var(--ls-label); }
+.sw-cap { top: calc(100% + 38px); max-width: 64ch; font-size: var(--fs-small); color: var(--fg-dim); line-height: 1.5; }
+.sw-link:hover .sw-name { color: var(--accent); }
+.sw-cta { position: absolute; right: 5%; bottom: 7%; z-index: 3; }
+.sw-note { position: absolute; left: 6%; bottom: 6%; z-index: 3; margin: 0; max-width: 46ch; color: var(--fg-dim); pointer-events: none; }
+.sw-video { position: absolute; inset: 0; margin: 0; }
+.sw-video video { width: 100%; height: 100%; object-fit: cover; display: block; }
+/* Round 5 A3: Pause and Unmute sit in a row under the bezel, right-aligned, never over the picture. The caption
+   on that panel stops short of the row. */
+.sw-video-controls { position: absolute; right: 0; top: calc(100% + 10px); z-index: 3; display: flex; gap: 6px; }
+.sw-portal .sw-cap { right: 214px; }
+
+/* Water-ripple band on the dark panels: a few thin slices re-randomised while the panel moves. */
+.sw-ripple { position: absolute; left: 0; right: 0; top: 64%; height: 22%; z-index: 2; pointer-events: none; overflow: hidden; }
+.sw-ripple i {
+  position: absolute; left: -12px; right: -12px; top: 0; height: 3px; opacity: 0;
+  background: linear-gradient(90deg, transparent, rgb(160 220 255 / .16) 18%, rgb(255 255 255 / .26) 50%, rgb(160 220 255 / .16) 82%, transparent);
+  box-shadow: 0 -1px 0 rgb(255 42 79 / .35), 0 1px 0 rgb(63 200 255 / .35);
+}
+
+/* ───────────────────────── The shared WebGL canvas: fixed behind the About text */
+.journey-gl { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 1; opacity: 0; visibility: hidden; pointer-events: none; background: #050507; }
+.journey-gl.is-on { visibility: visible; }
+
+/* ───────────────────────── 03 About: three blocks that scroll up through the scenes */
+.journey-about { z-index: 2; }
+.chapter-contact { z-index: 3; }   /* slides in over the fixed scene canvas */
+.js:not(.journey-static) .journey-about { height: 870vh; background: transparent; }
+.js:not(.journey-static) .about-stage { overflow: hidden; }
+.about-block { max-width: 36ch; color: #eef3f6; --bg: #050507; --bg-2: #10161b; --fg: #eef3f6; --fg-dim: #b7c6cf; --line-strong: rgba(255, 255, 255, .45); --accent: #8fe3ff; }
+.js:not(.journey-static) .about-block {
+  position: absolute; left: var(--margin); top: 0; z-index: 2;
+  transform: translate3d(0, var(--ty), 0); will-change: transform; --ty: 110vh;
+}
+.about-block .scrim {
+  position: absolute; z-index: -1; inset: -96px -120px -96px -140px; pointer-events: none;
+  background: radial-gradient(closest-side, rgb(3 6 10 / .9), rgb(3 6 10 / .72) 50%, rgb(3 6 10 / 0));
+}
+.about-eyebrow { margin: 0 0 12px; color: var(--fg); font-weight: 400; }
+.about-block p { font-size: var(--fs-small); line-height: 1.65; }
+.about-open { color: var(--accent); margin-top: 14px; }
+.about-actions { margin-top: 14px; gap: 10px; }
+.about-block .link-cmd { color: var(--accent); }
+.scene-poster { display: none; }
+
+/* ───────────────────────── Static layout: reduced motion, no WebGL2, or no JS */
+:is(html:not(.js), html.journey-static) .journey-work .sw-stage { position: relative; height: auto; overflow: visible; padding: calc(var(--header-h) + 40px) var(--margin) 80px; display: grid; gap: 24px; }
+:is(html:not(.js), html.journey-static) .sw-index { position: static; }
+:is(html:not(.js), html.journey-static) .sw-index a[aria-current] .sw-bullet::before { content: none; }
+:is(html:not(.js), html.journey-static) .sw-panels { position: static; display: grid; gap: 120px; padding-bottom: 80px; }
+:is(html:not(.js), html.journey-static) .sw-panel { position: relative; left: auto; top: auto; width: min(100%, 940px); transform: none; opacity: 1; }
+:is(html:not(.js), html.journey-static) .sw-ripple, :is(html:not(.js), html.journey-static) .sw-ground, :is(html:not(.js), html.journey-static) .sw-stage > .scene, :is(html:not(.js), html.journey-static) .sw-capzone, :is(html:not(.js), html.journey-static) .sw-stage .hud-br { display: none; }
+:is(html:not(.js), html.journey-static) .journey-gl { display: none; }
+:is(html:not(.js), html.journey-static) .journey-about { background: #050507; }
+:is(html:not(.js), html.journey-static) .about-stage { position: relative; height: auto; padding: calc(var(--header-h) + 24px) var(--margin) 80px; display: grid; gap: 40px; }
+:is(html:not(.js), html.journey-static) .scene-poster {
+  display: block; width: 100%; aspect-ratio: 16 / 9; max-height: 70vh;
+  background: #050507 center / cover no-repeat;
+}
+:is(html:not(.js), html.journey-static) .scene-poster[data-poster="1"] { background-image: url("/assets/img/scenes/scene-1.webp"), radial-gradient(ellipse at 50% 55%, #18322a, #050507 70%); }
+:is(html:not(.js), html.journey-static) .scene-poster[data-poster="2"] { background-image: url("/assets/img/scenes/scene-2.webp"), linear-gradient(90deg, #04090f 30%, #bfe6f5 50%, #1b4a68 56%, #0e2a3f); }
+:is(html:not(.js), html.journey-static) .scene-poster[data-poster="3"] { background-image: url("/assets/img/scenes/scene-3.webp"), radial-gradient(ellipse 120% 60% at 50% 110%, #4aa3ff, #071a33 40%, #000 70%); }
+:is(html:not(.js), html.journey-static) .about-block .scrim { display: none; }
+
+/* ───────────────────────── Phones: same flow, about 70% of the scroll, panels fill the width */
+@media (max-width: 720px) {
+  .journey-work { --pw: min(88vw, 70vh * 1.6); }
+  .js:not(.journey-static) .journey-work { height: 541vh; }   /* (4.8 + 1.5) × 70vh + 100vh */
+  .js:not(.journey-static) .journey-about { height: 609vh; }
+  .js:not(.journey-static) .chapter.journey-work .stage, .js:not(.journey-static) .chapter.journey-about .stage { position: sticky; height: 100svh; padding: 0; }
+  .sw-panel { left: calc(50% - var(--pw) / 2); top: calc(42% - var(--pw) * .3125); }
+  .sw-index { bottom: 5vh; }
+  .sw-stage .hud-br { display: none; }
+  .sw-cap { display: none; }
+  .sw-cta { right: 4%; bottom: 5%; padding: 8px 12px; }
+  .sw-note { display: none; }
+  .js:not(.journey-static) .about-block { left: var(--margin); right: var(--margin); max-width: none; }
+}
+
+/* Poster layer: shown before the scenes are ready, and for scenes 2–3 on low-power phones. */
+.journey-poster { position: fixed; inset: 0; z-index: 1; pointer-events: none; visibility: hidden; opacity: 0; background: #050507 center / cover no-repeat; }
+.journey-poster.is-shown { visibility: visible; }
+.journey-poster[data-scene="1"] { background-image: url("/assets/img/scenes/scene-1.webp"), radial-gradient(ellipse at 50% 55%, #18322a, #050507 70%); }
+.journey-poster[data-scene="2"] { background-image: url("/assets/img/scenes/scene-2.webp"), linear-gradient(90deg, #04090f 30%, #bfe6f5 50%, #1b4a68 56%, #0e2a3f); }
+.journey-poster[data-scene="3"] { background-image: url("/assets/img/scenes/scene-3.webp"), radial-gradient(ellipse 120% 60% at 50% 110%, #4aa3ff, #071a33 40%, #000 70%); }
+:is(html:not(.js), html.journey-static) .journey-poster { display: none; }
+
+/* A short slice glitch as a block enters or leaves (individual `translate` composes with the scroll transform). */
+.about-block.is-glitch { animation: block-glitch 180ms steps(1, end) 1; }
+@keyframes block-glitch {
+  0%   { clip-path: inset(0 0 72% 0); translate: -8px 0; }
+  25%  { clip-path: inset(18% 0 46% 0); translate: 8px 0; }
+  50%  { clip-path: inset(48% 0 22% 0); translate: -5px 0; }
+  75%  { clip-path: inset(70% 0 0 0); translate: 6px 0; }
+  100% { clip-path: none; translate: none; }
+}
+@media (prefers-reduced-motion: reduce) { .about-block.is-glitch { animation: none; } }
+
+/* Live previews inside the panels (js/journey/previews.js). */
+.sw-live { z-index: 2; }
+.sw-tip {
+  position: absolute; left: 0; top: 0; z-index: 4; pointer-events: none; white-space: nowrap;
+  transform: translate(calc(var(--x, 0px) - 50%), calc(var(--y, 0px) - 100% - 10px));
+  padding: 6px 9px; font: 12px/1.3 var(--font-mono); color: #f2f2f2; background: rgb(0 0 0 / .86); border: 1px solid rgb(143 227 255 / .45);
+}
+.pv-flyrank { display: grid; place-items: center; padding: 3% 4% 12%; }
+.pv-chart { width: 100%; height: 100%; font-family: var(--font-mono); }
+.pv-title { fill: #9fb3bf; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
+.pv-grid { stroke: rgb(255 255 255 / .1); }
+.pv-axis { stroke: rgb(255 255 255 / .45); }
+.pv-tick { fill: #9fb3bf; font-size: 12px; }
+.pv-bar rect { fill: #3f8cff; transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(0); transition: transform 900ms cubic-bezier(.2, .8, .2, 1), fill 150ms; }
+.pv-bar.is-baseline rect { fill: #ffb000; }
+.pv-bar:nth-of-type(2) rect { transition-delay: 120ms; } .pv-bar:nth-of-type(3) rect { transition-delay: 240ms; }
+.is-grown .pv-bar rect { transform: scaleY(1); }
+.pv-bar.is-hot rect { fill: #8fe3ff; }
+.pv-bar.is-baseline.is-hot rect { fill: #ffd166; }
+.pv-val { fill: #f2f2f2; font-size: 15px; opacity: 0; transition: opacity 300ms 700ms; }
+.is-grown .pv-val { opacity: 1; }
+.pv-lab { fill: #f2f2f2; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+.pv-bar.is-baseline .pv-lab { fill: #ffb000; }
+.pv-sub { fill: #9fb3bf; font-size: 11px; }
+.pv-ncl { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 4%; align-items: center; padding: 6% 6% 14%; font-family: var(--font-mono); }
+.pv-k { margin: 0; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: #9fb3bf; }
+.pv-rank { margin: 8px 0; font-family: var(--font-display); font-size: clamp(2rem, 5vw, 4.4rem); line-height: 1; color: #f4f8fb; text-shadow: var(--xray-bloom-soft, none); }
+.pv-rank-of { font-size: .42em; color: #9fb3bf; }
+.pv-bars { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.pv-bars li { display: grid; grid-template-columns: 9ch minmax(0, 1fr) 5ch; gap: 8px; align-items: center; font-size: 12px; color: #d4e1e9; }
+.pv-bt { height: 8px; background: rgb(255 255 255 / .08); }
+.pv-bf { display: block; height: 100%; width: var(--w, 0%); transform-origin: 0 50%; transform: scaleX(0); transition: transform 900ms cubic-bezier(.2, .8, .2, 1); background: var(--c, #8fe3ff); box-shadow: 0 0 8px var(--c, #8fe3ff); }
+.is-grown .pv-bf { transform: scaleX(1); }
+.pv-bv { text-align: right; color: #9fb3bf; }
+.pv-bars li.is-hot { color: #fff; }
+.pv-bars .n1 { --c: var(--neon-1, #8fe3ff); } .pv-bars .n2 { --c: var(--neon-2, #6fe3a1); } .pv-bars .n3 { --c: var(--neon-3, #ffd166); }
+.pv-bars .n4 { --c: var(--neon-4, #ff9f43); } .pv-bars .n5 { --c: var(--neon-5, #ff6fb1); } .pv-bars .n6 { --c: var(--neon-6, #b18cff); }
+.pv-bars .n7 { --c: var(--neon-7, #3fc8ff); } .pv-bars .n8 { --c: var(--neon-8, #b8ff2e); } .pv-bars .n9 { --c: var(--neon-9, #ff4d6d); }
+.pv-il { position: absolute; inset: 0; overflow: hidden; }
+.pv-il > .il-home { transform-origin: 0 0; }
+@media (max-width: 720px) { .pv-ncl { grid-template-columns: 1fr; padding: 5% 6% 12%; } .pv-bars { display: none; } }
+.sw-video-controls button {
+  min-height: 44px; padding: 8px 14px; background: rgb(5 5 7 / .92); color: #f2f2f2; border: 1px solid rgb(255 255 255 / .4);
+  font: inherit; font-size: var(--fs-label); letter-spacing: var(--ls-label); text-transform: uppercase; cursor: pointer;
+}
+.sw-video-controls button:hover { background: #f2f2f2; color: #050505; }
+.sw-portal.is-portal .sw-video-controls, .sw-portal.is-portal .sw-name, .sw-portal.is-portal .sw-cap { opacity: 0; visibility: hidden; transition: opacity 200ms, visibility 0s 200ms; }

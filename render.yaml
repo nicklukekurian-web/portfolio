@@ -1,0 +1,64 @@
+# Render static site. Only the files scripts/build.sh copies into dist/ are published
+# (never docs/, tests/ or node_modules/).
+services:
+  - type: web
+    name: nicholas-kurian-portfolio
+    runtime: static
+    buildCommand: bash scripts/build.sh
+    staticPublishPath: dist
+    pullRequestPreviewsEnabled: false
+    headers:
+      - path: /*
+        name: Content-Security-Policy
+        value: "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests; require-trusted-types-for 'script'; trusted-types portfolio-html"
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
+      - path: /*
+        name: Permissions-Policy
+        value: "camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=()"
+      - path: /*
+        name: X-Frame-Options
+        value: DENY
+      - path: /*
+        name: Strict-Transport-Security
+        value: max-age=63072000; includeSubDomains
+      - path: /*
+        name: Cross-Origin-Opener-Policy
+        value: same-origin
+      - path: /*
+        name: Cross-Origin-Resource-Policy
+        value: same-origin
+      # HTML is revalidated on every visit (no-cache); assets keep their max-age below. The file names are not
+      # content-hashed yet, so a far-future immutable lifetime would pin old files (see qa-report/REPORT.md).
+      - path: /*
+        name: Cache-Control
+        value: no-cache
+      - path: /assets/*
+        name: Cache-Control
+        value: public, max-age=604800
+      - path: /css/*
+        name: Cache-Control
+        value: public, max-age=86400
+      - path: /js/*
+        name: Cache-Control
+        value: public, max-age=86400
+    routes:
+      - type: redirect
+        source: /index.html
+        destination: /
+      - type: redirect
+        source: /proof.html
+        destination: /proof
+      - type: redirect
+        source: /contact.html
+        destination: /contact
+      - type: rewrite
+        source: /proof
+        destination: /proof.html
+      - type: rewrite
+        source: /contact
+        destination: /contact.html

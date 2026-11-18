@@ -1,0 +1,94 @@
+{
+  "_todo": "TODO(nick): card says 5961, earlier graphic said 476/5960; confirm against the Scouting Report",
+  "_source": "rank/total: docs/build/CONTENT.md. Stats and completion map: Nick's NCL Fall 2026 terminal card. Category points: CONTENT.md. Survey row: Nick's Score Summary.",
+  "rank": 420,
+  "total": 5959,
+  "points": 2335,
+  "maxPoints": 3000,
+  "accuracy": 84.9,
+  "correct": 141,
+  "questions": 166,
+  "skipped": 0,
+  "hints": 3,
+  "completion": 86.5,
+  "categories": [
+    {
+      "key": "osint",
+      "label": "OSINT",
+      "short": "OSINT",
+      "points": 385,
+      "max": 390,
+      "completion": 100
+    },
+    {
+      "key": "log_analysis",
+      "label": "Log Analysis",
+      "short": "LOG",
+      "points": 300,
+      "max": 300,
+      "completion": 100
+    },
+    {
+      "key": "network_traffic",
+      "label": "Network Traffic Analysis",
+      "short": "NET",
+      "points": 230,
+      "max": 300,
+      "completion": 94
+    },
+    {
+      "key": "forensics",
+      "label": "Forensics",
+      "short": "FORENSICS",
+      "points": 245,
+      "max": 300,
+      "completion": 94
+    },
+    {
+      "key": "cryptography",
+      "label": "Cryptography",
+      "short": "CRYPTO",
+      "points": 290,
+      "max": 375,
+      "completion": 93
+    },
+    {
+      "key": "exploitation",
+      "label": "Exploitation and Enumeration",
+      "short": "EXPLOIT",
+      "points": 210,
+      "max": 300,
+      "completion": 90
+    },
+    {
+      "key": "password_cracking",
+      "label": "Password Cracking",
+      "short": "PASSWD",
+      "points": 275,
+      "max": 335,
+      "completion": 76
+    },
+    {
+      "key": "scanning_recon",
+      "label": "Scanning and Reconnaissance",
+      "short": "SCAN",
+      "points": 200,
+      "max": 300,
+      "completion": 67
+    },
+    {
+      "key": "web_app_exploit",
+      "label": "Web Application Exploitation",
+      "short": "WEB",
+      "points": 100,
+      "max": 300,
+      "completion": 27
+    }
+  ],
+  "survey": {
+    "label": "Survey",
+    "points": 100,
+    "max": 100,
+    "note": "Not a competition category. It is the tenth row of the Score Summary and brings the nine categories (2,235 / 2,900) to the total (2,335 / 3,000)."
+  }
+}

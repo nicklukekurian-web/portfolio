@@ -1,0 +1,88 @@
+/* Fonts: self-hosted OFL woff2 Latin subsets (licenses in assets/fonts/). */
+@font-face { font-family: "Doto"; src: url("../assets/fonts/doto-latin-800-normal.woff2") format("woff2"); font-weight: 800; font-display: swap; }
+@font-face { font-family: "Doto"; src: url("../assets/fonts/doto-latin-900-normal.woff2") format("woff2"); font-weight: 900; font-display: swap; }
+@font-face { font-family: "Doto"; src: url("../assets/fonts/doto-latin-700-normal.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "JetBrains Mono"; src: url("../assets/fonts/jetbrains-mono-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "JetBrains Mono"; src: url("../assets/fonts/jetbrains-mono-latin-700-normal.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+/* Metric-matched fallbacks: local monospace faces with Doto's and JetBrains Mono's ascent and descent (measured:
+   .95/.25 and 1.02/.30; all are 0.6em wide), so the font swap moves nothing (CLS 0). */
+@font-face { font-family: "Doto Fallback"; src: local("Menlo Regular"), local("Menlo-Regular"), local("SF Mono Regular"), local("SFMono-Regular"), local("Consolas"), local("DejaVu Sans Mono"), local("Courier New"); ascent-override: 95%; descent-override: 25%; line-gap-override: 0%; }
+@font-face { font-family: "JetBrains Mono Fallback"; src: local("Menlo Regular"), local("Menlo-Regular"), local("SF Mono Regular"), local("SFMono-Regular"), local("Consolas"), local("DejaVu Sans Mono"), local("Courier New"); ascent-override: 102%; descent-override: 30%; line-gap-override: 0%; }
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-padding-top: calc(var(--header-h) + 16px); }
+/* Home's anchors are full-screen chapters that sit flush under the see-through header (Round 5 B4: /#work landed 96px low). */
+html:has(body[data-page="home"]) { scroll-padding-top: 0; }
+body {
+  margin: 0;
+  min-height: 100svh;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-mono);
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+img, video, svg, canvas { display: block; max-width: 100%; }
+img, video { height: auto; }
+a { color: inherit; text-underline-offset: .2em; text-decoration-thickness: 1px; }
+a:hover { color: var(--accent); }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+p { margin: 0 0 1em; max-width: 68ch; }
+figure { margin: 0; }
+ul, ol { margin: 0; padding: 0; }
+h1, h2, h3, h4 { margin: 0; font-weight: 800; line-height: 1; }
+
+/* Doto is display-only and never under 20px. */
+.display, h2.display, .h2 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .01em;
+}
+.h2 { font-size: var(--fs-h2); line-height: .95; }
+.h3 { font-family: var(--font-display); font-weight: 800; font-size: var(--fs-h3); text-transform: uppercase; }
+.label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-label);
+  line-height: 1.4;
+}
+.dim { color: var(--fg-dim); }
+.accent { color: var(--accent); }
+.mono-caps { text-transform: uppercase; letter-spacing: .04em; }
+
+/* Focus: 2px accent outline, 3px offset, everywhere. */
+:focus { outline: none; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: var(--radius); }
+
+.skip-link {
+  position: fixed; left: var(--margin); top: 8px; z-index: 1000;
+  padding: 10px 14px; background: var(--fg); color: var(--bg);
+  font-size: var(--fs-label); text-transform: uppercase; letter-spacing: var(--ls-label); text-decoration: none;
+  transform: translateY(-200%);
+}
+.skip-link:focus-visible { transform: none; }
+
+.sr-only {
+  position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+.wrap { width: 100%; padding-inline: var(--margin); margin-inline: auto; max-width: 1440px; }
+.stack > * + * { margin-top: var(--stack, 1rem); }
+.hairline { border: 0; border-top: 1px solid var(--line); margin: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Programmatic focus on a scroll target (main, a section): no ring on non-interactive containers. */
+[tabindex="-1"]:focus { outline: none; }

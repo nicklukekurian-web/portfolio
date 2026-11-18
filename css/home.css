@@ -1,0 +1,152 @@
+/* ───────────────────────── Hero stage (Fojcik proportions: small glowing
+   name left-middle, 4-line justified caps block right-middle, the portrait
+   and warped grid fill the whole screen behind). */
+.stage-hero {
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  grid-template-rows: 1fr auto auto;
+  overflow: hidden;
+  isolation: isolate;
+  --glow: 0 0 6px rgba(214, 232, 255, .55), 0 0 18px rgba(143, 200, 255, .25);
+}
+.portrait {
+  position: absolute; inset: 0; z-index: -2;
+  width: 100%; height: 100%;
+}
+/* Tube vignette: dark rounded corners like the edge of a CRT. */
+.stage-hero::after {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(ellipse 78% 88% at 50% 50%, transparent 58%, rgba(0, 0, 0, .55) 82%, rgba(0, 0, 0, .92) 100%);
+}
+[data-theme="light"] .stage-hero::after { display: none; }
+
+.hero-inner {
+  align-self: center;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, var(--hero-col));
+  column-gap: var(--gutter);
+  row-gap: 10px;
+  padding-top: var(--header-h);
+}
+.hero-title {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
+  align-items: center;
+  font-weight: 400;
+}
+.hero-name {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--fs-name);
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  white-space: nowrap;
+  text-shadow: var(--xray-bloom);
+  align-self: end;
+}
+/* The claim sits in a bracket block (thin rule with tick marks): justified caps mono, then the blurb and an availability tag. */
+.hero-inner { --hero-col: 31ch; }
+.hero-claim {
+  position: relative; padding: 6px 0 6px 22px; border-left: 1px solid var(--line-strong);
+  font-family: var(--font-mono); font-weight: 400; font-size: .875rem; line-height: 1.45;
+  text-transform: uppercase; letter-spacing: .06em; text-align: justify; text-align-last: left;
+  hyphens: none; text-shadow: var(--xray-bloom-soft);
+}
+.hero-claim::before, .hero-claim::after {
+  content: ""; position: absolute; left: -4px; width: 7px; height: 1px; background: var(--fg);
+}
+.hero-claim::before { top: 0; }
+.hero-claim::after { bottom: 0; }
+.hero-tag {
+  grid-column: 1;
+  margin: 0;
+  color: var(--fg-dim);
+  display: flex; gap: 6em;
+  font-size: .75rem;
+}
+.hero-sub {
+  grid-column: 2;
+  margin: 6px 0 0; padding-left: 22px; max-width: none; color: var(--fg-dim);
+  font-size: .75rem; line-height: 1.55;
+  text-transform: uppercase; letter-spacing: .05em; text-align: left;
+}
+.hero-open {
+  grid-column: 2; margin: 4px 0 0 22px; width: max-content;
+  font-size: .75rem; color: var(--accent); letter-spacing: var(--ls-label);
+}
+.hero-open::before { content: "▪ "; }
+.hero-actions { padding-block: 20px 16px; align-items: center; column-gap: 28px; }
+/* Fojcik idiom: one small inverted row, the rest as > commands. */
+.hero-actions .btn-primary {
+  font-family: var(--font-mono); font-size: var(--fs-label); font-weight: 700;
+  letter-spacing: var(--ls-label); padding: 12px 16px; min-height: 40px;
+}
+.hero-status { background: linear-gradient(to top, color-mix(in srgb, var(--bg) 88%, transparent) 30%, transparent); }
+.hero-inner, .hero-actions .btn-secondary { text-shadow: var(--glow); }
+[data-theme="light"] .hero-inner { text-shadow: none; }
+[data-theme="light"] .hero-name, [data-theme="light"] .hero-claim { text-shadow: none; }
+
+/* Chromatic fringe on the name: a hint of RGB misregistration. */
+.hero-name { filter: drop-shadow(-1px 0 0 rgba(255, 40, 90, .45)) drop-shadow(1px 0 0 rgba(60, 200, 255, .45)); }
+[data-theme="light"] .hero-name { filter: none; }
+
+/* Under 1280px the head is centered above the text, never behind it. */
+@media (max-width: 1279px) {
+  .stage-hero { grid-template-rows: auto auto auto; }
+  .portrait { height: 64svh; top: var(--header-h); }
+  .hero-inner { grid-template-columns: minmax(0, 1fr); align-self: start; padding-top: calc(var(--header-h) + 63svh); }
+  .hero-title { grid-template-columns: minmax(0, 1fr); row-gap: 10px; }
+  .hero-claim { max-width: 30ch; text-align: left; }
+  .hero-tag, .hero-sub, .hero-open { grid-column: 1; }
+  .hero-sub { max-width: 46ch; }
+}
+@media (max-width: 719px) {
+  .hero-claim { font-size: .8125rem; max-width: none; }
+  .hero-tag { gap: 3em; }
+}
+@media (max-width: 380px) {
+  .hero-name { font-size: 2.25rem; letter-spacing: 0; }
+}
+
+/* ───────────────────────── Sticky chapters (normal scroll; no hijacking) */
+.chapter { position: relative; height: 180vh; background: var(--bg); color: var(--fg); }
+.chapter .stage { position: sticky; top: 0; height: 100svh; overflow: hidden; isolation: isolate; }
+.scene { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; }
+.hud { z-index: 2; }
+
+/* ───────────────────────── 04 Contact stage (tunnel) */
+.chapter-contact .stage { display: grid; place-items: center; text-align: center; }
+.chapter-contact .stage::after {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: radial-gradient(ellipse 50% 45% at 50% 50%, color-mix(in srgb, var(--bg) 70%, transparent), transparent 80%);
+}
+.talk { position: relative; max-width: 900px; padding-block: 56px; display: grid; justify-items: center; gap: 18px; }
+.crosshair { position: absolute; width: 18px; height: 18px; }
+.crosshair::before, .crosshair::after { content: ""; position: absolute; background: var(--fg); }
+.crosshair::before { left: 8px; top: 0; width: 1px; height: 18px; }
+.crosshair::after { top: 8px; left: 0; height: 1px; width: 18px; }
+.crosshair.tl { top: 0; left: 0; } .crosshair.tr { top: 0; right: 0; }
+.crosshair.bl { bottom: 0; left: 0; } .crosshair.br { bottom: 0; right: 0; }
+.talk-title { font-size: clamp(2rem, 5.5vw, 4.5rem); line-height: .95; text-shadow: 0 0 10px rgba(255, 196, 160, .35); }
+.talk-title > span:not(.scr) { display: block; }   /* only the second line: the scramble's letter spans stay inline */
+.talk-sub { margin: 0; color: var(--fg-dim); text-transform: uppercase; letter-spacing: .06em; font-size: var(--fs-small); }
+.talk-links { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin-top: 14px; }
+.talk .btn { margin-top: 4px; }
+
+/* ───────────────────────── Below 720: stages unstick, cards stack */
+@media (max-width: 719px) {
+  .chapter { height: auto; }
+  .crosshair { display: none; }              /* they crowd the HUD label and the headline at phone width */
+  .chapter .stage { position: relative; height: auto; min-height: 0; padding-block: 72px; overflow: hidden; }
+}
+
+/* Round 5 B3 (tests/e2e/matrix.spec.js): touch targets in the hero and 14px running text on 320–380px phones. */
+@media (pointer: coarse) {
+  .hero-actions .btn-primary { min-height: 44px; }
+  .hero-actions .link-cmd { min-height: 44px; display: inline-flex; align-items: center; }
+}
+@media (max-width: 380px) { .hero-sub { font-size: .875rem; letter-spacing: .03em; } }

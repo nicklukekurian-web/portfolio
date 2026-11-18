@@ -1,0 +1,28 @@
+{
+ "_todo": "TODO(nick): confirm these are team totals, not mine",
+ "event": "CSAW CTF 2026",
+ "role": "Team Captain",
+ "team": "hugh_hack",
+ "group": "UTD Computer Security Group",
+ "place": 260,
+ "band": [
+  20,
+  25
+ ],
+ "field": "1,000+ scoring teams, historically",
+ "about": "entry-level jeopardy CTF run by NYU",
+ "categories": [
+  "WEB",
+  "FORENSICS",
+  "CRYPTO",
+  "MISC",
+  "OSINT",
+  "REV"
+ ],
+ "teamTotals": {
+  "points": 912,
+  "challenges": 10,
+  "hours": 48,
+  "when": "SEPT 2026"
+ }
+}

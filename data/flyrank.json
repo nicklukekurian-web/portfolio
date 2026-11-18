@@ -1,0 +1,27 @@
+{
+ "_note": "Precision@K at K=50 from the FlyRank Search Content Decline Analysis. In-sample: these do not show the trees beat the rule.",
+ "k": 50,
+ "metric": "Precision@50",
+ "inSample": true,
+ "results": [
+  {
+   "key": "rule",
+   "label": "Hand-written rule",
+   "short": "Baseline",
+   "value": 0.68,
+   "baseline": true
+  },
+  {
+   "key": "tree_depth2",
+   "label": "Decision tree (depth 2)",
+   "short": "Depth-2 tree",
+   "value": 0.6
+  },
+  {
+   "key": "tree_depth3",
+   "label": "Decision tree (depth 3)",
+   "short": "Depth-3 tree",
+   "value": 0.72
+  }
+ ]
+}

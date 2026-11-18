@@ -1,0 +1,90 @@
+/* Design tokens. Dark is the default and the design target.
+   Contrast (checked 2026-11-14): fg/bg 18.2 · fg-dim/bg 7.2 · accent/bg 14.2
+   ink/paper 16.6 · fg-dim-light/paper 6.3 · accent-ink/paper 5.2 · dim-ink/paper 5.4 */
+:root {
+  --bg: #050505;
+  --bg-2: #0d0f12;
+  --paper: #ecebe7;
+  --ink: #0a0a0a;
+  --fg: #f2f2f2;
+  --fg-dim: #9a9a9a;
+  --line: rgba(255, 255, 255, .14);
+  --line-strong: rgba(255, 255, 255, .4);
+  --accent: #8fe3ff;          /* phosphor cyan: active, focus, "signal fired" */
+  /* X-ray glow/text family (sampled from Nick's reference). Cyan stays the interactive accent. */
+  --xray-ground: #0b161a;     /* the teal-black behind the text */
+  --xray-core: #f4f8fb;       /* hottest pixels */
+  --xray-soft: #d4e1e9;       /* normal text color: easy on the eyes */
+  --xray-glow-1: #819baa;     /* mid halo */
+  --xray-glow-2: #385464;     /* outer halo */
+  --xray-bloom: 0 0 2px rgb(244 248 251 / .55), 0 0 10px rgb(129 155 170 / .55), 0 0 28px rgb(56 84 100 / .70);
+  --xray-bloom-soft: 0 0 6px rgb(129 155 170 / .45), 0 0 18px rgb(56 84 100 / .55);
+  --accent-ink: #006a87;      /* the same signal on paper surfaces */
+  --level-low: #9a9a9a;
+  --level-medium: #f2f2f2;
+  --level-high: #8fe3ff;
+
+  --font-display: "Doto", "Doto Fallback", ui-monospace, monospace;
+  --font-mono: "JetBrains Mono", "JetBrains Mono Fallback", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --fs-name: clamp(2.25rem, 2.9vw, 3.25rem);   /* Fojcik scale: small, glowing, one line (was 7vw in DESIGN_SPEC) */
+  --fs-h2: clamp(1.75rem, 4vw, 3.5rem);
+  --fs-h3: clamp(1.25rem, 2vw, 1.75rem);
+  --fs-body: clamp(1rem, .95rem + .3vw, 1.125rem);
+  --fs-small: .875rem;
+  --fs-label: .8125rem;
+  --ls-label: .08em;
+
+  --gutter: 24px;
+  --margin: clamp(16px, 3vw, 40px);
+  --header-h: 64px;
+  --radius: 2px;
+  --ease: cubic-bezier(.2, .7, .1, 1);
+  --dur: 160ms;
+
+  --crt-scan-opacity: .2;
+  --crt-on: 1;
+  color-scheme: dark;
+}
+
+/* Light theme: tokens swap, CRT overlay off. Scoped to any element so the
+   styleguide can show both themes side by side. */
+[data-theme="light"] {
+  --bg: #ecebe7;
+  --bg-2: #e1e0dc;
+  --fg: #0a0a0a;
+  --fg-dim: #55554f;
+  --line: rgba(0, 0, 0, .14);
+  --line-strong: rgba(0, 0, 0, .34);
+  --accent: #006a87;
+  --level-low: #55554f;
+  --level-medium: #0a0a0a;
+  --level-high: #006a87;
+  --crt-on: 0;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    --bg: #ecebe7; --bg-2: #e1e0dc; --fg: #0a0a0a; --fg-dim: #55554f;
+    --line: rgba(0, 0, 0, .14); --line-strong: rgba(0, 0, 0, .34);
+    --accent: #006a87; --level-low: #55554f; --level-medium: #0a0a0a; --level-high: #006a87;
+    --crt-on: 0; color-scheme: light;
+  }
+}
+[data-theme="dark"] {
+  --bg: #050505; --bg-2: #0d0f12; --fg: #f2f2f2; --fg-dim: #9a9a9a;
+  --line: rgba(255, 255, 255, .14); --line-strong: rgba(255, 255, 255, .4);
+  --accent: #8fe3ff; --level-low: #9a9a9a; --level-medium: #f2f2f2; --level-high: #8fe3ff;
+  --crt-on: 1; color-scheme: dark;
+}
+
+/* Paper surface (Selected Work stage) in either theme. */
+.surface-paper {
+  --bg: var(--paper);
+  --bg-2: #e1e0dc;
+  --fg: var(--ink);
+  --fg-dim: #55554f;
+  --line: rgba(0, 0, 0, .16);
+  --line-strong: rgba(0, 0, 0, .34);
+  --accent: var(--accent-ink);
+  color-scheme: light;
+}

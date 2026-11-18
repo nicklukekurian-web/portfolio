@@ -1,0 +1,20 @@
+node_modules/
+dist/
+playwright-report/
+test-results/
+.lighthouseci/
+.DS_Store
+*.log
+.env
+.env.*
+
+# Nick's personal launch checklist: never pushed
+START_HERE.md
+
+# Screen recordings used as reference only: large, never committed or shipped
+docs/build/review-*/*.mov
+
+# QA working files (Round 5 Part B): only the final report and commit notes are kept
+qa-report/*
+!qa-report/REPORT.md
+!qa-report/COMMIT_NOTES.md

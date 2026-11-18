@@ -1,0 +1,30 @@
+/* Styleguide-only layout. Not shipped on real pages.
+   The CRT overlay is page-level (and off in the light theme), so it is hidden
+   here to show both panels truthfully; see it on index.html. */
+body[data-page="styleguide"]::before,
+body[data-page="styleguide"]::after { display: none; }
+.sg-intro { padding-block: 48px 24px; }
+.sg-themes { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 560px), 1fr)); }
+.sg-panel { background: var(--bg); color: var(--fg); padding: 32px var(--margin) 48px; display: grid; gap: 40px; align-content: start; border-top: 1px solid var(--line); }
+.sg-tag { color: var(--accent); }
+.sg-block { display: grid; gap: 16px; min-width: 0; }
+.sg-name { font-weight: 900; font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: .9; margin: 0; }
+.sg-swatches { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 12px; }
+.sg-swatches li { display: grid; gap: 6px; }
+.sw { display: block; height: 48px; border: 1px solid var(--line-strong); }
+.sw-bg { background: var(--bg); } .sw-bg2 { background: var(--bg-2); } .sw-fg { background: var(--fg); }
+.sw-dim { background: var(--fg-dim); } .sw-accent { background: var(--accent); } .sw-line { background: var(--line); }
+.sg-hud-box { position: relative; height: 90px; border: 1px dashed var(--line); }
+.sg-hud-box .hud-tl { top: 8px; left: 10px; } .sg-hud-box .hud-br { bottom: 8px; right: 10px; }
+.sg-paper { background: var(--bg); color: var(--fg); padding: 20px; }
+.sg-work { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 24px; align-items: center; }
+.sg-screen { aspect-ratio: 16 / 10; }
+@media (max-width: 719px) { .sg-work { grid-template-columns: 1fr; } }
+.sg-card { max-width: 520px; }
+.sg-meter-72 { --score: 72; }
+.sg-band-30 { left: 30%; } .sg-band-60 { left: 60%; }
+.sg-gap { margin-top: 16px; }
+.sg-menu { position: static; width: min(320px, 100%); }
+.sg-preloader { position: relative; inset: auto; height: 160px; z-index: auto; }
+.sg-preloader .pill i { animation: none; left: 40%; }
+.sg-footer { padding-inline: 0; }

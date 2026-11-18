@@ -1,0 +1,10 @@
+{
+  "name": "Nicholas Kurian",
+  "short_name": "N. Kurian",
+  "description": "CS @ UT Dallas · ML + AI security · building explainable fraud detection.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#050505",
+  "theme_color": "#000000",
+  "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}
