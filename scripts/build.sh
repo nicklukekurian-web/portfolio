@@ -4,7 +4,7 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 rm -rf dist
 mkdir -p dist
-cp index.html proof.html contact.html 404.html favicon.svg site.webmanifest robots.txt sitemap.xml dist/
+cp index.html proof.html contact.html 404.html favicon.svg favicon.ico favicon-192.png favicon-512.png apple-touch-icon.png site.webmanifest robots.txt sitemap.xml dist/
 cp -R css js data assets dist/
 rm -f dist/assets/fonts/*.txt.bak 2>/dev/null || true
 rm -rf dist/assets/source-images                # design references only; the pages rebuild them as exhibits
