@@ -1,8 +1,9 @@
 {
-  "_todo": "TODO(nick): card says 5961, earlier graphic said 476/5960; confirm against the Scouting Report",
+  "_todo": "TODO(nick): the total has read 5,959, 5,961 and 5,962 (and 476/5,960 on an earlier graphic). Set to 5,962 on 2026-11-20; it can move until NCL's final announcement. Keep 'top ~7%' beside the rank (it holds for every version) and confirm against the Scouting Report.",
   "_source": "rank/total: docs/build/CONTENT.md. Stats and completion map: Nick's NCL Fall 2026 terminal card. Category points: CONTENT.md. Survey row: Nick's Score Summary.",
+  "medal": "Diamond",
   "rank": 420,
-  "total": 5959,
+  "total": 5962,
   "points": 2335,
   "maxPoints": 3000,
   "accuracy": 84.9,

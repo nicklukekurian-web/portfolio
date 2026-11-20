@@ -22,19 +22,44 @@ export function initSiteLinks() {
     row.hidden = false;
   }
   // Optional images, same rule: [data-site-image="key"] stays hidden and empty (no frame, no broken <img>, no gap)
-  // until site[key] is a path under /assets/img/.
+  // until site[key] is set. It is either a path under /assets/img/ or an object { webp, png, width, height, alt,
+  // caption } (the NCL badge), drawn as a <picture> with a PNG fallback and a caption, from data/site.js alone.
+  const IMG = /^\/?assets\/img\/[\w./-]+\.(png|jpe?g|webp|svg)$/i;
+  const abs = (p) => (p.startsWith('/') ? p : `/${p}`);
   for (const slot of document.querySelectorAll('[data-site-image]')) {
-    const src = site[slot.dataset.siteImage];
-    if (typeof src !== 'string' || !/^\/?assets\/img\/[\w./-]+\.(png|jpe?g|webp|svg)$/i.test(src)) continue;
-    const frame = document.createElement('figure');
-    frame.className = 'crt-frame';
+    const v = site[slot.dataset.siteImage];
+    const rich = v && typeof v === 'object';
+    const png = rich ? v.png : v;
+    if (typeof png !== 'string' || !IMG.test(png) || (rich && v.webp && !IMG.test(v.webp))) continue;
     const img = document.createElement('img');
-    img.src = src.startsWith('/') ? src : `/${src}`;
-    img.alt = slot.dataset.siteImageAlt || '';
+    img.src = abs(png);
+    img.alt = rich ? v.alt || '' : slot.dataset.siteImageAlt || '';
+    if (rich && v.width && v.height) { img.width = v.width; img.height = v.height; }
     img.loading = 'lazy';
     img.decoding = 'async';
-    frame.append(img);
-    slot.append(frame);
+    let media = img;
+    if (rich && v.webp) {
+      media = document.createElement('picture');
+      const source = document.createElement('source');
+      source.type = 'image/webp';
+      source.srcset = abs(v.webp);
+      media.append(source, img);
+    }
+    if (rich) {
+      const fig = document.createElement('figure');
+      fig.className = 'badge-card';
+      const cap = document.createElement('figcaption');
+      cap.className = 'note label dim';
+      cap.textContent = v.caption || '';
+      fig.append(media, cap);
+      slot.append(fig);
+      slot.closest('.ncl-lead')?.classList.add('has-badge');
+    } else {
+      const frame = document.createElement('figure');
+      frame.className = 'crt-frame';
+      frame.append(media);
+      slot.append(frame);
+    }
     slot.hidden = false;
   }
 }

@@ -21,8 +21,9 @@ def values():
     with open(os.path.join(ROOT, "data", "ncl.json"), encoding="utf-8") as f:
         d = json.load(f)
     return {
+        "ncl.medal": d["medal"],                    # Diamond (NCL's exact word; never a tier number)
         "ncl.rank": ordinal(d["rank"]),             # 420th
-        "ncl.total": f"{d['total']:,}",             # 5,959
+        "ncl.total": f"{d['total']:,}",             # 5,962
         "ncl.top": str(round(d["rank"] / d["total"] * 100)),   # 7  (whole percent)
     }
 

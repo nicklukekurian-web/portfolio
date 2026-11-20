@@ -115,6 +115,7 @@
             <a class="btn btn-secondary" href="https://internlog-onrender-com.onrender.com/" rel="noopener noreferrer">Live site <span aria-hidden="true">↗</span></a>
           </div>
           <p class="note label dim">Free hosting: the first load can take a few seconds to wake up.</p>
+          <!-- TODO(nick): confirm the credit wording for Suhaas with him before launch. -->
           <p class="credit">Built with Suhaas Voruganti.</p>
 
           <h3 class="h3 glow">What it is</h3>
@@ -385,6 +386,7 @@
 
         <!-- ─────────────────────────── 04 MINDSOFT -->
         <section class="case" id="mindsoft" aria-labelledby="mindsoft-title">
+          <!-- TODO(nick): MindSoft has no live link because it is not approved yet; add one only after approval. -->
           <span class="eyebrow label"><b class="glow">04</b> / Summer 2026 internship</span>
           <h2 class="h2 glow" id="mindsoft-title">MindSoft Solutions internship</h2>
           <p class="lede">IT and Web Development Intern at MindSoft Solutions LLC, June to August 2026 (Allen, TX, hybrid).</p>
@@ -398,8 +400,13 @@
           <h2 class="h2 glow" id="competitions-title">Competitions</h2>
 
           <h3 class="h3 glow">National Cyber League, Fall 2026 Individual Game</h3>
-          <p>Ranked {{ncl.rank}} of {{ncl.total}} (top ~{{ncl.top}}%). Scored 2,335 of 3,000 points at 84.9% accuracy (141 of 166 correct, 0 skipped) across nine categories in a solo weekend competition.</p>
-          <p class="note label dim">Results are official after NCL's audit announcement.</p>
+          <div class="ncl-lead">
+            <div class="ncl-lead-text">
+            <p>Ranked {{ncl.rank}} of {{ncl.total}} (top ~{{ncl.top}}%). Scored 2,335 of 3,000 points at 84.9% accuracy (141 of 166 correct, 0 skipped) across nine categories in a solo weekend competition.</p>
+            <p class="note label dim">Results are official after NCL's audit announcement.</p>
+            </div>
+            <div class="ncl-badge" data-site-image="nclBadge" hidden></div>
+          </div>
           <!-- The Scouting Report line stays hidden until links.nclScoutingReport is set in data/site.js (js/site-links.js shows it). -->
           <p class="ncl-report" data-site-link-row="nclScoutingReport" data-site-link-text="NCL Scouting Report" hidden></p>
           <figure class="chart" data-chart="ncl">
@@ -428,8 +435,8 @@
             <details class="ex-data"><summary class="label">View data</summary><div class="table-wrap"><table class="table"><caption>NCL Fall 2026 Individual Game</caption><thead><tr><th scope="col">Measure</th><th scope="col">Value</th></tr></thead><tbody><tr><td>Rank</td><td>{{ncl.rank}} of {{ncl.total}} (top ~{{ncl.top}}%)</td></tr><tr><td>Points</td><td>2,335 / 3,000</td></tr><tr><td>Accuracy</td><td>84.9%</td></tr><tr><td>Completion</td><td>86.5%</td></tr><tr><td>Correct</td><td>141 / 166</td></tr><tr><td>Skipped</td><td>0</td></tr><tr><td>Hints</td><td>3</td></tr><tr><td>Completion: OSINT</td><td>100%</td></tr><tr><td>Completion: Log Analysis</td><td>100%</td></tr><tr><td>Completion: Network Traffic Analysis</td><td>94%</td></tr><tr><td>Completion: Forensics</td><td>94%</td></tr><tr><td>Completion: Cryptography</td><td>93%</td></tr><tr><td>Completion: Exploitation and Enumeration</td><td>90%</td></tr><tr><td>Completion: Password Cracking</td><td>76%</td></tr><tr><td>Completion: Scanning and Reconnaissance</td><td>67%</td></tr><tr><td>Completion: Web Application Exploitation</td><td>27%</td></tr></tbody></table></div></details>
             <figcaption class="ex-cap label">Fig. 07 · NCL Fall 2026 report</figcaption>
           </figure>
-          <div class="shots shots-single" data-site-image="nclBadge" data-site-image-alt="NCL Fall 2026 digital badge" hidden></div>
 
+          <!-- TODO(nick): add CSAW scoreboard screenshot before claiming personal share of points. Keep this wording until then: 260th, roughly the top 20-25% of scoring teams, six categories. -->
           <h3 class="h3 glow">CSAW CTF 2026, team captain</h3>
           <p>Captained a 3-member UT Dallas Computer Security Group team ("hugh_hack") in a 48-hour jeopardy-style CTF. The team placed 260th, roughly the top 20 to 25% of scoring teams, solving challenges in six categories: Web, Forensics, Cryptography, Misc, OSINT and Reverse Engineering.</p>
           <figure class="exhibit ex-e6-csaw" data-exhibit="e6-csaw">
@@ -453,6 +460,7 @@
                 <tr><td>Python Programming Essentials</td><td><svg class="pix issuer-ico" viewBox="0 0 16 16" aria-hidden="true" focusable="false" shape-rendering="crispEdges"><use href="/assets/icons/sprite.svg#mortarboard"/></svg>Rice University</td><td>Jul 2026</td></tr>
                 <tr><td>AP Scholar with Distinction</td><td><svg class="pix issuer-ico" viewBox="0 0 16 16" aria-hidden="true" focusable="false" shape-rendering="crispEdges"><use href="/assets/icons/sprite.svg#award"/></svg>College Board</td><td>2024</td></tr>
                 <tr><td>National Society of Leadership and Success (inductee)</td><td><svg class="pix issuer-ico" viewBox="0 0 16 16" aria-hidden="true" focusable="false" shape-rendering="crispEdges"><use href="/assets/icons/sprite.svg#torch"/></svg>NSLS</td><td>May 2026</td></tr>
+                <!-- TODO(nick): confirm the Security+ target month (January 2027 today). -->
                 <tr><td>CompTIA Security+: in progress</td><td><svg class="pix issuer-ico" viewBox="0 0 16 16" aria-hidden="true" focusable="false" shape-rendering="crispEdges"><use href="/assets/icons/sprite.svg#padlock"/></svg>CompTIA</td><td><span class="tag-progress">Target January 2027</span></td></tr>
               </tbody>
             </table>
@@ -506,7 +514,7 @@
             <table class="table">
               <thead><tr><th scope="col">Group</th><th scope="col">Skills</th></tr></thead>
               <tbody>
-                <tr><th scope="row">Languages</th><td>Python, JavaScript, C++, MATLAB, HTML/CSS, SQL</td></tr>
+                <tr><th scope="row">Languages</th><td>Python, JavaScript, HTML/CSS, SQL, MATLAB, C++</td></tr>
                 <tr><th scope="row">Web and tools</th><td>Node.js, Express, PostgreSQL (Supabase), Git and GitHub, GitHub Actions (CI/CD), GitHub Pages</td></tr>
                 <tr><th scope="row">ML and data</th><td>scikit-learn (decision trees), pandas, NumPy, model evaluation (Precision@K, train/test leakage), Google Colab</td></tr>
                 <tr><th scope="row">Security and AI</th><td>CTF skills (web, forensics, cryptography, OSINT), AI foundations (search, knowledge representation, neural networks), CompTIA Security+ (in progress)</td></tr>

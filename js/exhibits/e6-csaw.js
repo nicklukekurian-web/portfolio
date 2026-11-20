@@ -25,7 +25,7 @@ export async function mount(stage) {
     </div>`));
   const root = stage.querySelector('.ctf');
 
-  const svg = s('svg', { viewBox: `0 0 ${W} ${H}`, role: 'img', 'aria-label': `Percentile track: top ${lo} to ${hi} percent, ${d.place}th place` });
+  const svg = s('svg', { viewBox: `0 0 ${W} ${H}`, role: 'img', 'aria-label': `Placement track: top ${lo} to ${hi} percent, ${d.place}th place` });
   svg.append(s('line', { x1: x(0), x2: x(100), y1: 34, y2: 34, class: 'ctf-axis' }));
   for (const v of [0, 25, 50, 75, 100]) svg.append(s('line', { x1: x(v), x2: x(v), y1: 29, y2: 39, class: 'ctf-axis' }), s('text', { x: x(v), y: 58, 'text-anchor': 'middle', class: 'ctf-tick' }, `${v}%`));
   const band = s('rect', { x: x(lo), y: 24, width: x(hi) - x(lo), height: 20, class: 'ctf-bandrect' });
@@ -37,7 +37,7 @@ export async function mount(stage) {
     const a = el.getBoundingClientRect(), b = svg.getBoundingClientRect();
     return { x: a.left - b.left + a.width / 2, y: a.top - b.top, text: i ? `${d.place}th place · team ${d.team}` : `Top ${lo}–${hi}% of ${d.field}` };
   });
-  inspect(svg, items, { box: root, label: 'Percentile track. Arrow keys step between the band and the marker.', onFocus: (i) => svg.classList.toggle('is-inspecting', i >= 0) });
+  inspect(svg, items, { box: root, label: 'Placement track. Arrow keys step between the band and the marker.', onFocus: (i) => svg.classList.toggle('is-inspecting', i >= 0) });
 
   const chips = [...root.querySelectorAll('.ctf-chip')];
   const nums = [...root.querySelectorAll('.ctf-n')];

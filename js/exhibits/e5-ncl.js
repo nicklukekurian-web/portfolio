@@ -25,7 +25,7 @@ export async function mount(stage) {
         <p class="t-line t-ok"><b>[OK]</b> authenticating operator nickkurian ... access granted</p>
         <p class="t-line t-ok"><b>[OK]</b> decrypting scoreboard ... done</p>
         <p class="t-rank glow"><span class="sr-only">Rank ${n.rank} of ${fmtInt(n.total)}</span><span aria-hidden="true">RANK <span class="t-rank-n">${n.rank}</span> <span class="t-slash">/</span> <span class="t-rank-t">${fmtInt(n.total)}</span></span></p>
-        <p class="t-pct">&gt; percentile: <b>top ~<span class="t-top">${top}</span>%</b></p>
+        <p class="t-pct">&gt; placement: <b>top ~<span class="t-top">${top}</span>%</b></p>
         <dl class="t-stats">
           <div><dt>Points</dt><dd><b class="t-num" data-to="${n.points}">${fmtInt(n.points)}</b> / ${fmtInt(n.maxPoints)}</dd></div>
           <div><dt>Accuracy</dt><dd><b class="t-num" data-to="${n.accuracy}" data-dec="1">${n.accuracy}</b>%</dd></div>
