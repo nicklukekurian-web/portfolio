@@ -26,18 +26,5 @@ export const site = {
     enabled: false,
     url: '',
   },
-  // NCL digital badge, issued 2026-11-18 (Round 6). Proof renders it from this object (js/site-links.js): a <picture>
-  // with the WebP and the PNG fallback, the real pixel size, this alt text and this caption. Set it to '' to hide the
-  // slot again. Wording rule: the exact word "Diamond" only; no tier number, and the badge image's own percentile line
-  // is never repeated in page text (tests/content-guard.test.js).
-  nclBadge: {
-    webp: '/assets/img/ncl-digital-badge.webp',
-    png: '/assets/img/ncl-digital-badge.png',
-    width: 575,
-    height: 835,
-    alt: 'NCL Fall 2026 Individual Game Diamond badge for nickkurian, earned 2026-11-18.',
-    caption: 'Digital badge issued by NCL (Cyber Skyline), earned 2026-11-18.',
-    earned: '2026-11-18',
-  },
   updated: 'Nov 2026',
 };

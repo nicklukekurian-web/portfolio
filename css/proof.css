@@ -178,11 +178,3 @@
 
 /* Round 5 B3: the rail's chips are 44px tall on touch screens. */
 @media (pointer: coarse) { .rail-list a { min-height: 44px; display: inline-flex; align-items: center; } }
-
-/* Round 6: the NCL badge sits beside the NCL result text (stacked on phones). Same card look as the other frames. */
-.ncl-lead { display: grid; gap: 20px; }
-.ncl-lead.has-badge { grid-template-columns: minmax(0, 1fr) minmax(0, 260px); align-items: start; gap: 28px; }
-.badge-card { margin: 0; border: 1px solid var(--line); border-radius: 4px; padding: 12px; background: var(--bg-2); display: grid; gap: 10px; }
-.badge-card img { display: block; width: 100%; height: auto; border-radius: 2px; }
-.badge-card figcaption { margin: 0; line-height: 1.5; text-transform: none; letter-spacing: .02em; }
-@media (max-width: 719px) { .ncl-lead.has-badge { grid-template-columns: minmax(0, 1fr); } .badge-card { max-width: 300px; } }
